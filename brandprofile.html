@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+
+<script src="validation.js"></script>
+
+    
+    <style>
+        body {
+            font-family: 'Cursive', sans-serif;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            zoom: 0.8;
+        }
+
+        .top-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: black; /* Add white background color */
+            border-radius: 15px; /* Add border radius for curved edges */
+        }
+
+        .profile-picture {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            margin-left: 0;
+            margin-bottom: 8px;
+            object-position: top; /* Show the top of the image */
+            align-items: center;
+            justify-content: center;
+        }
+
+       .profile-picture-container {
+           margin-left: 34%;
+       }
+           
+
+        .video-container {
+            width: 1500px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            margin-left: 0px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 1500px;
+        }
+
+
+
+        .user-info {
+            margin-top: -70px;
+            padding: 0 20px;
+            text-align: left;
+        }
+
+        .user-info p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+       .brandname{
+           margin-left: 75px;
+       }
+        
+.Bio {
+            margin-left: 0;
+            font-size: 19.5px;
+            line-height: 1.5;
+            margin-top: 5px;
+            text-align: center;
+        }
+        
+       .username {
+           font-size: 17px;
+       }
+        
+        .make-offer-button {
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .make-offer-button button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .make-offer-button button:hover {
+            background-color: #ff3333;
+        }
+
+.copy-button {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .copy-button button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .copy-button button:hover {
+            background-color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+    
+
+        /* Your existing CSS styles here */
+
+        #whiteBox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7px;
+            background-color: white;
+            z-index: 9999;
+        }
+
+#biobyline {
+    margin-top:45px;
+    margin-bottom: 45px;
+}
+
+
+        .byline-container2 {
+    display: flex; /* Display bylines in a row */
+    overflow: hidden;
+   background: linear-gradient(to right, black, white);
+/*linear-gradient(45deg, #ff4d4d, #ffb6c1);*/
+    padding: 0; /* Remove padding to make it is as tall as its contents */
+    align-items: flex-start; /* Align contents to the top */
+}
+
+    
+        .header-container2 {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 100%; /* Ensure each byline takes up the full width */
+    
+}
+
+
+h1 {
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    text-align: center;
+    color: #ffb6c1;
+    font-size: 21px;
+    font-family: 'Cursive', cursive;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 1500;
+    
+}
+        
+.username {
+    background: linear-gradient(to right, black, white);
+    background-clip: text;
+    color: white;
+}
+
+/* Animation for moving the text */
+@keyframes moveText {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move off-screen to the left */
+    }
+}
+
+h1 {
+    animation: moveText 10s linear infinite; /* Adjust the animation duration as needed */
+    display: inline-block; /* Make the text behave like an inline-block element */
+    position: relative; /* Position relative for z-index */
+    z-index: 1; /* Ensure the text is above the background */
+    
+}
+
+    
+.header-container h1 {
+    animation: moveText 10s linear infinite;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    
+}
+
+/* Style adjustments for additional bylines */
+.header-container2 + .header-container2 {
+    margin-left: 20px; /* Adjust spacing between bylines */
+} 
+
+.byline-container2:before {
+    content: ''; /* Create a separator between bylines */
+    display: inline-block;
+    width: 10px; /* Adjust the separator width as needed */
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+}
+        
+
+
+        
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+    grid-gap: 20px;
+    margin: 50px auto;
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns when the viewport width is at least 800px */
+    }
+}
+
+
+
+        .grid-item {
+            background-color: #fff;
+            padding: 0px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+          position: relative; /* Add position: relative; to the grid-item */
+            display: inline-block;
+        vertical-align: top;
+        transition: transform 1s linear;
+            width: 210px;
+}
+        
+
+        .grid-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        
+/* Styles for the grid-item img */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+
+ /* Existing styles for the parameters */
+.grid-item .parameters {
+    text-align: left;
+    padding: 10px; /* Adjust padding for better visibility */
+    position: absolute; /* Change position to absolute */
+    bottom: 0; /* Position at the bottom of the grid-item */
+    left: 0; /* Position at the left of the grid-item */
+    background: linear-gradient(to right, black, white);
+/* Add a semi-transparent background color */
+    border-bottom-left-radius: 5px; /* Add border radius to the bottom left corner */
+    color: white;
+    z-index: 2; /* Increase z-index to layer parameters over the image */
+}
+
+        .grid-item .parameters p {
+            margin: 0;
+            font-size: 23px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+
+
+        
+        
+    </style>
+
+</head>
+<body>
+    
+<div class="profile-picture-container">
+            <img class="profile-picture" src="images/BFB.png" alt="Profile Picture">
+        </div>
+    
+<!-- <h1 class="brandname" id="brandUsername">BalOn FlyBoy Inc. </h1> -->
+
+
+<div class="profilebar">
+
+    <div class="byline-container2" id="biobyline">
+        
+    <div class="header-container2"> 
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+        
+    <div class="header-container2">      
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+
+        <div class="header-container2">        
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+        
+</div>
+    
+    
+    
+     <p class="Bio">HookUp Deals. Social Media Account Brokerage. Photography. Designer Wear Sales. Bring your Ad Deals</p>
+    
+    
+    <div class="top-container">
+        
+        <div class="video-container" onclick="playVideo()">
+            <video id="video" style="width: 100%; height: 100%; object-fit: cover;" controls>
+            
+                <!-- Dummy Video Source (Replace with actual video file) -->
+                <source src="PTVID2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    
+<div class="profilebar">
+
+    <div class="byline-container2" id="biobyline">
+        
+    <div class="header-container2"> 
+        <h1 class="username" id="profileUsername"> Products & Services</h1>
+    </div>
+        
+    <div class="header-container2">      
+        <h1 class="username" id="profileUsername">My Catalogue</h1>
+    </div>
+
+        <div class="header-container2">        
+        <h1 class="username" id="profileUsername">Products & Services</h1>
+    </div>
+        
+</div>
+
+
+
+      <div class="grid-container">
+    
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/ITEM.gif" alt="Animated GIF" class="playing" loading="lazy">
+   </div>
+   <a href="whatsapplink.html">
+       <div class="parameters">
+            <p>Product Info</p>
+ </div> 
+   </a>
+</div> 
+
+
+
+                <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/ITEM.gif" alt="Animated GIF" class="playing" loading="lazy">
+   </div>
+   <a href="whatsapplink.html">
+       <div class="parameters">
+            <p>Product Info</p>
+ </div> 
+   </a>
+</div> 
+          
+                <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/ITEM.gif" alt="Animated GIF" class="playing" loading="lazy">
+   </div>
+   <a href="whatsapplink.html">
+       <div class="parameters">
+            <p>Product Info</p>
+ </div> 
+   </a>
+</div> 
+          
+        
+                <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/ITEM.gif" alt="Animated GIF" class="playing" loading="lazy">
+   </div>
+   <a href="whatsapplink.html">
+       <div class="parameters">
+            <p>Product Info</p>
+ </div> 
+   </a>
+</div> 
+        
+
+      </div>
+    
+    
+         <p class="hidden" id="profileid">64e66fffbe60410027952774/c/1828481170 </p>
+        
+           
+
+    <div class="copy-button">
+        <button onclick="copyProfileID()">CLICK TO COPY PROFILE ID</button>
+    </div>
+    
+
+    <div class="make-offer-button">
+        <button onclick="window.location.href='https://t.me/HaremIsABot'">MAKE OFFER</button>
+    </div>
+
+
+<!-- Add this white box element -->
+<div id="whiteBox"></div>
+    
+    
+    <script>
+        function playVideo() {
+            const videoElement = document.getElementById('video');
+            videoElement.style.display = 'block';
+            videoElement.play();
+        }
+    </script>
+
+    <script>
+        function copyProfileID() {
+            const profileIDElement = document.getElementById('profileid');
+            const textArea = document.createElement('textarea');
+            textArea.value = profileIDElement.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Profile ID copied to clipboard: ' + profileIDElement.innerText);
+        }
+    </script>
+
+
+
+
+<script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiMwMDAwMDAiLCJ3ZWIiOnsiYm90SWQiOiI2NGZiYWM4MDdjMTRiNDMzZTA1MzFhMzQiLCJ0aGVtZSI6IiMwMDAwMDAiLCJsYWJlbCI6Ik1BS0UgQU4gT0ZGRVIgIn0sIndlbGNvbWVUZXh0IjoiVGFwIGhlcmUgdG8gbWFrZSBhbiBvZmZlciEgIn0=" async defer></script>
+    
+</body>
+</html>

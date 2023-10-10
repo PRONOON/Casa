@@ -1,0 +1,627 @@
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+    background-size: 100% 100%; /* Adjust the background size */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    zoom: 0.55;
+    margin: 0; /* Reset default margin for the body element */
+    padding: 0; /* Reset default padding for the body element */
+}
+
+
+.logo-container {
+    top: 0px;
+    left: -20px; /* Adjust the left position as needed */
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+     margin-bottom: 0px;
+    margin-left: 30px;
+    position: fixed;
+    background-color: white;
+    background: white;
+    z-index: 600;
+    width: 1600px;
+    align-items: center;
+    justify-content: center;
+    padding-right: 200px;
+}
+        
+
+/* Style for casalogo.png */
+.casalogo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add margin to separate from the navigation button */
+    animation: fadeInOut 2s infinite;
+}
+
+/* Style for casalettered.png */
+.casalettered {
+    width: 500px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Add some basic styles for the button container */
+        .button-container {
+            position: fixed;
+            top: 150px; /* Adjust the top position as needed */
+            right: 10px; /* Adjust the right position as needed */
+            display: flex;
+            background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+
+            width: 120%;
+       
+            border-radius:100px;
+            z-index: 8;
+            
+            padding-bottom: 65px;
+                  }
+
+        /* Style for individual button icons */
+        .person-icon {
+            width: 120px; /* Adjust the width as needed */
+            height: 120px; /* Adjust the height as needed */
+            margin-left: 50px; /* Adjust the margin between icons as needed */
+            cursor: pointer;
+            border-radius: 600px;
+            margin-top: 40px;
+            margin-left:1820px;                            
+        }
+
+        .question-icon {
+            width: 120px; /* Adjust the width as needed */
+            height: 120px; /* Adjust the height as needed */
+            margin-left: 55px; /* Adjust the margin between icons as needed */
+            cursor: pointer;
+            border-radius: 600px;
+            margin-top: 40px;
+            
+        }
+        
+        
+
+@keyframes disco {
+    0% { background-color: rgba(255, 0, 0, 0.5); color: #ffb6c1; }
+    25% { background-color: rgba(255, 0, 0, 0.5); color: #ffb6c1; }
+    50% { background-color: rgba(255, 0, 0, 0.5); color: #ffb6c1; }
+    75% { background-color: rgba(255, 0, 0, 0.5); color: #ffb6c1; }
+    100% { background-color: rgba(255, 0, 0, 0.5); color: #ffb6c1; }
+}
+
+@keyframes fadeInOut2 {
+  50% {
+    opacity: 0.5;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+       .byline-container {
+    display: flex; /* Display bylines in a row */
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+    padding: 25px 0; /* Remove padding to make it as tall as its contents */
+    align-items: flex-start; /* Align contents to the top */
+    margin-top:200px;
+    margin-bottom: 200px;
+}
+
+        .byline-container2 {
+    display: flex; /* Display bylines in a row */
+    overflow: hidden;
+   background: linear-gradient(to right, black, white);
+/*linear-gradient(45deg, #ff4d4d, #ffb6c1);*/
+    padding: 0; /* Remove padding to make it as tall as its contents */
+    align-items: flex-start; /* Align contents to the top */
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+
+.byline-container3 {
+    display: flex; /* Display bylines in a row */
+    overflow: hidden;
+   background: linear-gradient(to right, black, white);
+/*linear-gradient(45deg, #ff4d4d, #ffb6c1);*/
+    padding: 0; /* Remove padding to make it as tall as its contents */
+    align-items: flex-start; /* Align contents to the top */
+    margin-top: 0px;
+    margin-bottom: 100px;
+}
+        
+    .byline-container4 {
+    display: flex; /* Display bylines in a row */
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+    padding: 0; /* Remove padding to make it as tall as its contents */
+    align-items: flex-start; /* Align contents to the top */
+margin-top: 250px;
+    margin-bottom: 100px;
+}
+
+/* Keyframes for horizontal movement */
+.header-container {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 100%; /* Ensure each byline takes up the full width */
+    
+}
+
+        .header-container2 {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text from wrapping */
+    width: 100%; /* Ensure each byline takes up the full width */
+    
+}
+
+
+h1 {
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    text-align: center;
+    color: #ffb6c1;
+    font-size: 82px;
+    font-family: 'Cursive', cursive;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 1500;
+    
+}
+        
+.username {
+    background: linear-gradient(to right, black, white);
+    background-clip: text;
+    color: white;
+}
+
+/* Animation for moving the text */
+@keyframes moveText {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Move off-screen to the left */
+    }
+}
+
+h1 {
+    animation: moveText 10s linear infinite; /* Adjust the animation duration as needed */
+    display: inline-block; /* Make the text behave like an inline-block element */
+    position: relative; /* Position relative for z-index */
+    z-index: 1; /* Ensure the text is above the background */
+    
+}
+
+    #headertwo {
+        margin-top:10px;
+        margin-bottom: 10px;
+    }
+        
+.header-container h1 {
+    animation: moveText 10s linear infinite;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    
+}
+
+/* Style adjustments for additional bylines */
+.header-container + .header-container {
+    margin-left: 20px; /* Adjust spacing between bylines */
+} 
+
+.byline-container:before {
+    content: ''; /* Create a separator between bylines */
+    display: inline-block;
+    width: 10px; /* Adjust the separator width as needed */
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+}
+        
+        
+/* Style the navigation button */
+.menu-button {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    z-index: 1000;
+    width: 90px;
+    height: 130px;
+    background: white; /* Set the button color to black */
+    display: grid-column;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.firstbar {
+    width: 75px;
+    height: 15px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    margin: 3px 0; /* Adjust spacing between the bars */
+    transition: 0.4s;
+    margin-top: 40px;
+    margin-left: 5px;
+}
+        
+        
+.bar {
+    width: 75px;
+    height: 15px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    margin: 3px 0; /* Adjust spacing between the bars */
+    transition: 0.4s;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+        
+
+/* Style the sidebar pop-out box */
+
+        .sidebar {
+    position: fixed;
+    top: 0;
+    left: -750px; /* Initially hide the sidebar off-screen to the left */
+    width: 750px; /* Adjust the width to 600px */
+    height: 100%;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Use the same gradient as grid parameters */
+        
+        
+        
+    
+      /*  rgba(0, 0, 0, 0.7); */
+    
+    z-index: 999;
+    overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+    transition: left 0.4s;
+}
+
+/* Show the sidebar when it's open */
+.sidebar.open {
+    left: 0;
+}
+
+
+/* Style the NovaSeek™ text */
+.sidebar h2 {
+    font-size: 80px; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin: 20px 0; /* Add margin for spacing */
+    text-align: center; /* Center the text horizontally */
+    color: #ff4d4d;
+    font-family: 'Cursive', cursive; 
+    margin-top: 70px;
+}
+        
+
+/* Style the search form selections in a vertical row */
+.search-form {
+    padding: 20px; /* Add padding as needed */
+    display: flex;
+    flex-direction: column; /* Display the selections in a vertical row */
+    align-items: flex-start; /* Align items to the left */
+}
+       
+
+/* Style the search form selections */
+.search-form select {
+    width: 100%;
+    padding: 35px 10px; /* Increase vertical padding while keeping horizontal padding the same */
+    font-size: 30px;
+    border-radius: 65px;
+    background-color: #ff4d4d; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    margin-top: 15px;
+    margin-right: 16px;
+}
+
+
+        .search-form label {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-family: 'Cursive', cursive; 
+            color: white;
+        }
+
+
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+    grid-gap: 35px;
+    margin: 20px auto;
+    max-width: 1600px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns when the viewport width is at least 800px */
+    }
+}
+
+
+
+        .grid-item {
+            background-color: #fff;
+            padding: 0px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: relative; /* Add position: relative; to the grid-item */
+            display: inline-block;
+        vertical-align: top;
+        transition: transform 1s linear;
+        }
+          
+        
+
+        .grid-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        
+/* Styles for the grid-item img */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+
+ /* Existing styles for the parameters */
+.grid-item .parameters {
+    text-align: left;
+    padding: 10px; /* Adjust padding for better visibility */
+    position: absolute; /* Change position to absolute */
+    bottom: 0; /* Position at the bottom of the grid-item */
+    left: 0; /* Position at the left of the grid-item */
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+/* Add a semi-transparent background color */
+    border-bottom-left-radius: 5px; /* Add border radius to the bottom left corner */
+    color: white;
+    z-index: 2; /* Increase z-index to layer parameters over the image */
+}
+
+        .grid-item .parameters p {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.5;
+            font-weight: bold;
+        }
+        
+  /* Additional styles for the pop-up box */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500%;
+    width: 1350px;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: white;
+    font-size: 25px;
+    line-height: 1.5;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: normal; /* Allow text to wrap */
+}
+
+
+
+.popup-close {
+    float: right;
+    cursor: pointer;
+    font-size: 120px;
+    line-height: 1;
+}
+
+
+  /* Styles for the floating emojis container */
+.floating-emojis {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Styles for each individual emoji */
+.emoji {
+    position: absolute;
+    font-size: 50px;
+    pointer-events: none;
+    animation: floatEmoji 10s infinite linear;
+}
+
+/* Define the "floatEmoji" animation */
+@keyframes floatEmoji {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-100px, -100px);
+    }
+    50% {
+        transform: translate(100px, -200px);
+    }
+    75% {
+        transform: translate(-150px, 150px);
+    }
+    100% {
+        transform: translate(200px, 200px);
+    }
+}
+
+        
+        /* Define the styles for the playing state */
+.playing {
+  animation: none; /* This disables any animation applied to the image */
+  filter: none; /* This clears any filters applied to the image */
+  /* Add any other styles you want to apply to the playing GIF */
+}
+
+ .section-label {
+     position: fixed ;
+     top: 1%;
+     margin-top: 150px;
+     z-index: 505;
+    
+ } 
+ 
+
+.section-label-icon {
+    position: absolute; /* Position the icon absolutely within the container */
+    left: 64px; /* Adjust the left position as needed */
+    font-size: 50px; /* Adjust the font size for the icon */
+    color: silver;
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+}
+
+.search-bar {
+    width: 1300px; /* Adjust the width as needed */
+    height: 135px;
+    padding: 5px 5px 5px 75px; /* Adjust the left padding to make space for the icon */
+    border: 12px solid #ffb6c1;
+    border-radius: 100px;
+    margin-left: 35px; /* Add spacing between the text and the search bar */
+    font-size: 40px; /* Adjust font size */
+    outline: none; /* Remove the outline */
+    color: #ff4d4d; /* Placeholder text color */
+    font-style: italic; /* Set the font style to italic */
+    opacity: 0.55;
+  
+} 
+
+
+
+        
+#username-search::placeholder {
+    color: #ff4d4d; /* Placeholder text color */
+    font-style: italic; /* Set the font style to italic */
+    
+}
+
+        
+
+        /* Center the logo image horizontally and align it at the top of the page */
+.logo {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px; /* Add padding for spacing */
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;     
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+        @keyframes fadeInOut2 {
+  0% {
+    opacity: 0.8;   
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+        
+/* Add or modify the styles for the featured items */
+.featured-items {
+  display: flex;
+  flex-direction: row; /* Display items horizontally */
+  overflow: hidden; /* Hide overflowing items */
+  max-width: 850px; /* Set the maximum width */
+  height: auto; /* Let the height adjust automatically based on content */
+}
+
+/* Adjust the styles for each featured item */
+.featured-items .grid-item {
+  max-width: 100%; /* Set the maximum width to allow responsiveness */
+  margin-right: 20px; /* Add some spacing between items */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.5s; /* Add a smooth transition effect */
+  overflow: hidden; /* Hide overflowing content */
+  position: relative; /* Create a positioning context for the image */
+}
+
+/* Style for the last featured item (no margin-right) */
+.featured-items .grid-item:last-child {
+  margin-right: 0;
+}
+
+/* When hovering over a featured item, scale it slightly */
+.featured-items .grid-item:hover {
+  transform: scale(1.05);
+}
+
+/* Style the GIF images to fit within their container, maintaining aspect ratio */
+.featured-items .grid-item img {
+  max-width: 100%; /* Set the maximum width for responsiveness */
+  max-height: 100%; /* Set the maximum height for responsiveness */
+  width: auto; /* Ensure the width adjusts automatically based on max-width */
+  height: auto; /* Ensure the height adjusts automatically based on max-height */
+}
+
+
+/* Add or modify the styles for the featured items */
+.featured-items-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.featured-items-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Display 2 grids side by side */
+  grid-gap: 20px; /* Add grid gap between grids */
+  overflow: hidden; /* Hide overflowing items */
+  max-width: 100%; /* Ensure the grids don't exceed the container width */
+  transition: transform 0.5s; /* Add a smooth transition effect */
+}
+
+/* Style for each featured grid item */
+.featured-items-wrapper .grid-item {
+  width: 100%; /* Ensure each grid item takes up the full width of its cell */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* When hovering over a featured grid item, scale it slightly */
+.featured-items-wrapper .grid-item:hover {
+  transform: scale(1.05);
+}
+
+
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your meta tags and title here -->
+    <style> 
+
+body {
+    display: flex;
+    font-family: 'Cursive', cursive;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+   
+} 
+        
+.container {
+            width: 100%;
+            height:100%
+            margin: 0; /* Center the container */
+            padding: 0px;
+            margin: 0;
+            margin-left: 85px;
+        }
+
+        
+        .otp-setup {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            background-color: white;
+            align-items: center;
+            z-index: 10;
+            margin: 0;
+        }
+
+        .top-logo {
+            width: 150px;
+            margin-bottom: 5px;
+        }
+
+        .input {
+            font-size: 25px;
+            height: 40px;
+            width: 45px;
+            margin-right: 7px;
+            border-color: #ff4d4d;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .submit-button {
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+            border-width: 0px;
+            border-radius: 3px;
+            padding: 17px 125px 17px 125px;
+            display: block;
+            margin: 15px 0px 60px 0px;
+            margin-bottom: 7px;
+            transition: opacity, 0.15s;
+        }
+
+        .submit-button:hover {
+            font-weight: 700;
+            color: white;
+            background-color: #ff4d4d;
+            border-width: 0px;
+            border-radius: 3px;
+            padding: 19px 118px 19px 118px;
+            display: block;
+            margin: 15px 0px 60px 0px;
+            margin-bottom: 7px;
+            transition: opacity, 0.15s;
+            opacity: 0.9;
+        }
+
+        .icons {
+            width: 75px;
+            margin-right: 90px;
+            margin-left: 18px;
+            margin-bottom: 18px;
+            background-color: transparent;
+        }
+        p {
+            font-size: 23px;
+            color: #ff4d4d;
+    </style>
+</head>
+<body style="zoom: 200%; max-width: 400px;">
+    <div class="container">
+        <div class="otp-setup" style="width: 100%;">
+            
+
+
+            <img class="top-logo" src="images/casalogo.png">
+            <p class="welcome">Verification Code</p>
+            <p>Input received OTP verification code</p>
+            
+            <form id="otpForm">
+                <div style="display: flex; flex-direction: row;">
+                    <!-- Input fields for OTP -->
+                    <input required maxlength="1" type="text" class="input" style="outline: none;" oninput="nextInput(this)">
+                    <input required maxlength="1" type="text" class="input" style="outline: none;" oninput="nextInput(this)">
+                    <input required maxlength="1" type="text" class="input" style="outline: none;" oninput="nextInput(this)">
+                    <input required maxlength="1" type="text" class="input" style="outline: none;" oninput="nextInput(this)">
+                    <input required maxlength="1" type="text" class="input" style="outline: none;" oninput="nextInput(this)">
+                </div>
+            </form>
+
+            <button class="submit-button" onclick="validateOTP()">Submit</button>
+            <p>Request a code in</p>
+
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 50px; margin-top: 25px; margin-bottom: 25px;">
+    <a href="https://wa.me/2347088915856/?text=SEND%20OTP" target="_blank">
+        <img class="icons" src="images/whatsapp.png">
+    </a>
+    <a href="https://t.me/HaremIsABot?text=SEND%20OTP" target="_blank">
+        <img class="icons" src="images/telegram.png">
+    </a>
+</div>
+
+
+            <p style="color: #ff4d4d; font-size: 25px; margin-left: -15px; margin-top: 0px;">
+                <u>Didn't receive code?</u>
+            </p>
+        </div>
+    </div>
+
+        
+    <script>
+        // Define the list of valid OTPs
+        const validOTPs = [
+            "A0873", "B0472", "C3524", "D8405", "E4398", "F8932",
+            "G2886", "H5496", "I3775", "J7597", "K3786", "L4374", "M7732", "N3257",
+            "P5422", "Q7588", "R5743", "T5789", "U4590", "V5491", "W5772",
+            "X7452", "Y9983", "Z5323", "Z4389", "A4865", "B9935", "C4654", "D5477", "E5371", "F7735", "G6432", "H7721"
+        ];
+
+        // Function to check if OTP is valid and redirect
+        function validateOTP() {
+            const enteredOTP = Array.from(document.querySelectorAll(".input")).map(input => input.value).join("");
+            if (validOTPs.includes(enteredOTP)) {
+                // Store validation status in LocalStorage
+                localStorage.setItem("validationStatus", JSON.stringify({ validated: true }));
+                window.location.href = "homepage.html"; // Redirect to the specified URL
+            } else {
+                alert("Invalid OTP. Please try again.");
+            }
+        }
+
+
+        // Function to focus on the next input field
+        function nextInput(inputElement) {
+            const nextInput = inputElement.nextElementSibling;
+            if (nextInput) {
+                nextInput.focus();
+            }
+        }
+    </script>
+</body>
+</html>
+
