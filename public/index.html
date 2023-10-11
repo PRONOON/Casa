@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stage Three</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #logo {
+            display: none;
+            position: absolute;
+           
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            margin-top: 15%;
+            margin-bottom: 250px;
+            width: 700px;
+        }
+
+        #letteredLogo {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            margin-top: 90%;
+            width: 800px;
+            animation: fadeInOut 2s linear infinite;
+        }
+
+        #logo {
+            animation: fadeInSlowly 1s linear;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            25% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInSlowly {
+        0% {
+            opacity: 0;
+            transform: scale(0.8); /* Optional: Add a scaling effect */
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1); /* Optional: Return to normal size */
+        }
+    }
+            
+    </style>
+</head>
+<body>
+    <img id="logo" src="images/casalogo.png" alt="Logo">
+    <img id="letteredLogo" src="images/casalettered.png" alt="Lettered Logo">
+    <script>
+        // Function to start Stage One
+        function startStageOne() {
+            setTimeout(function() {
+                const logo = document.getElementById('logo');
+                logo.style.display = 'block';
+                logo.style.animation = 'fadeInOut 2s linear infinite';
+
+                // Start Stage Two after Stage One is complete
+                startStageTwo();
+            }, 0); // Start immediately
+        }
+
+        // Function to start Stage Two
+        function startStageTwo() {
+            setTimeout(function() {
+                const letteredLogo = document.getElementById('letteredLogo');
+                letteredLogo.style.display = 'block';
+                letteredLogo.style.animation = 'fadeInSlowly 5s ease-in-out';
+
+                // Start Stage Three after Stage Two is complete
+                startStageThree();
+            }, 6000); // 6 seconds delay
+        }
+
+        // Function to start Stage Three and redirect after 9 seconds
+        function startStageThree() {
+            setTimeout(function() {
+                // Redirect to a different page after Stage Three is complete
+                window.location.href = 'homepage.html'; // Replace with your desired URL
+            }, 7000); // 7 seconds delay
+        }
+
+        // Start Stage One
+        startStageOne();
+    </script>
+</body>
+</html>

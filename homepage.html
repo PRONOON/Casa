@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Casanova</title>
+
+    <script src="validation.js"></script>
+
+<style>
+    
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 110vh;
+    zoom: 0.8;
+}
+
+
+
+.logo-container {
+    margin: 0 auto; /* Center horizontally and add margin at the bottom */
+    z-index: 2; /* Place the logo above the overlay */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 600px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Apply the gradient as the background */
+    padding: 0% 300px; /* Vertically shorter, horizontally wider padding */
+    opacity: 0.62;
+}
+
+
+.logo {
+    width: 300px;
+    background-color: linear-gradient(45deg, #ff4d4d, #ffb6c1); /*  rgba(255, 255, 255, 0.8); /* Translucent white background */
+    border-radius: 100000000000000000px; /* Rounded corners */
+        
+}
+
+
+.loading-animation {
+    margin-top: 450px;
+    width: 0px;
+    height: 0px;
+    animation: spin 5s linear infinite;
+}
+
+.loader {
+    border: 20px solid rgba(255, 77, 77, 0.2);
+    border-radius: 50%;
+    border-top: 20px solid #ffb6c1;
+    width: 300px;
+    height: 300px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    
+}
+
+.personicon {
+    height: 100px;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+    
+.findicon {
+    height: 100px;
+    width: auto;
+    margin-left: 17px;
+    margin-right: 70px;
+}
+    
+.question {
+    height: 100px;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.app-button {
+    display: flex; /* Allow alignment of icon and text */
+    align-items: center; /* Center items vertically */
+    height: 120px;
+    width: 550px;
+    padding: 60px 30px;
+    border-radius: 300px;
+    
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Set the background to a linear gradient */
+    
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 45px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Cursive', cursive;
+}
+
+
+
+.app-button:hover {
+    background-color: #ff3333;
+}
+    
+.button-container.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    gap: 0px;
+}
+
+
+    
+</style>
+
+
+</head>
+<body>
+       <div class="logo-container">
+        <img src="images/casalogo.png" alt="Casa Logo" class="logo">
+    </div>
+    <div class="loading-animation">
+        <div class="loader"></div>
+    </div>
+    <div class="button-container hidden">
+        <a href="brandgrid.html" class="app-button find">
+    <img src="images/MAGNIFIERBGL.png" alt="Magnifier Icon" class="findicon">
+    FIND "HER"
+</a>
+<a href="https://t.me/HaremIsABot" class="app-button">
+    <img src="images/PERSONBGL.png" alt="Person Icon" class="personicon">
+   CREATE PROFILE
+</a>
+<a href="https://chatbot.hellotars.com/conv/fEJ061" class="app-button">
+    <img src="images/QUESTIONBGL.png" alt="Question Icon" class="question">
+    FAQBot (INQUIRIES)
+</a>
+
+    </div>
+
+    <script>
+    // Wait for the loading animation to finish 7 cycles
+    setTimeout(() => {
+        // Hide loading animation
+        document.querySelector('.loading-animation').style.display = 'none';
+        // Show buttons
+        document.querySelector('.button-container').classList.remove('hidden');
+        document.querySelector('.button-container').classList.add('visible');
+    }, 3000); // 3 seconds
+</script>
+
+<script>
+    const backgroundMedia = [
+        { type: 'image', source: 'images/CYCLE3.jpg', repeat: 'repeat' }, // Add the first GIF here
+        { type: 'image', source: 'images/CYCLE1.jpg', repeat: 'repeat' }, // Add images here
+        { type: 'image', source: 'images/CYCLE7.jpg', repeat: 'repeat' },
+        { type: 'image', source: 'images/CYCLE10.jpg', repeat: 'repeat' },
+        { type: 'image', source: 'images/CYCLE11.jpg', repeat: 'repeat' },
+        { type: 'image', source: 'images/CYCLE12.jpg', repeat: 'repeat' },
+        { type: 'image', source: 'images/CYCLE3.jpg', repeat: 'repeat' }, // Repeat these images
+        { type: 'image', source: 'images/CYCLE4.jpg', repeat: 'repeat' }, // to cover uncovered space
+        { type: 'image', source: 'images/CYCLE11.jpg', repeat: 'repeat' } // Add the second GIF here
+    ];
+
+    let currentMediaIndex = 0;
+    const bodyElement = document.querySelector("body");
+
+    function setMediaProperties(media) {
+        bodyElement.style.backgroundImage = `url('${media.source}'), url('black.jpg')`;
+        bodyElement.style.backgroundSize = 'cover';
+        bodyElement.style.backgroundPosition = 'center';
+        bodyElement.style.backgroundRepeat = `${media.repeat}, repeat`;
+    }
+    
+    function cycleBackgroundMedia() {
+        const currentMedia = backgroundMedia[currentMediaIndex];
+        
+        if (currentMedia.type === 'gif') {
+            setMediaProperties(currentMedia);
+            setTimeout(() => {
+                currentMediaIndex = (currentMediaIndex + 1) % backgroundMedia.length;
+                cycleBackgroundMedia();
+            }, currentMedia.duration);
+        } else if (currentMedia.type === 'image') {
+            setMediaProperties(currentMedia);
+            setTimeout(() => {
+                currentMediaIndex = (currentMediaIndex + 1) % backgroundMedia.length;
+                cycleBackgroundMedia();
+            }, 1000); // 1 second for images
+        }
+    }
+
+    cycleBackgroundMedia(); // Start cycling
+</script>
+
+
+
+
+
+    <script>(function(){var js,fs,d=document,id="tars-widget-script",b="https://tars-file-upload.s3.amazonaws.com/bulb/";if(!d.getElementById(id)){js=d.createElement("script");js.id=id;js.type="text/javascript";js.src=b+"js/widget.js";fs=d.getElementsByTagName("script")[0];fs.parentNode.insertBefore(js,fs)}})();window.tarsSettings = {"convid": "fEJ061", "href": "https://chatbot.hellotars.com/conv/fEJ061"};</script>
+    
+
+     
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Ladies' Profiles</title>
+    
+
+<script src="validation.js"></script>
+<link rel="stylesheet" type="text/css" href="brandgrid.css">
+    
+    <style>    
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: white; /* Adjusted gradient angle */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    zoom: 0.55;
+    margin: 0;
+    padding: 0;
+}
+
+
+    
+.profilebar {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+        
+        
+
+.top-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: white; /* Add white background color */
+            border-radius: 15px; /* Add border radius for curved edges */
+            position: relative; /* Set relative positioning for the container */  
+        
+        }
+
+        .profile-picture-container {
+            position: relative; /* Needed for absolute positioning */
+        }
+
+       
+        .profile-picture {
+            border-radius: 50%;
+            width: 430px;
+            height: 430px;
+            object-fit: cover;
+            margin-top: 35%;
+            margin-left: 35%;
+            margin-bottom: 8px;
+            object-position: top; /* Show the top of the image */
+            margin-right: 300px;
+            transition: transform 0.3s ease; /* Add a transition for the transform property */
+            border: 7px solid white; /* Add a border with the specified color */
+            background: linear-gradient(to right, black, white);
+            background-width: 100%;
+            padding: 2% 2%;
+        }
+
+        .profile-picture.expanded {
+            transform: scale(1.5); /* Enlarge the picture when expanded */
+        }
+
+        
+        /* Style for the speech bubble */
+        .speech-bubble {
+            width: 300px;
+            position: absolute;
+            top: -173%; /* 3px above the profile picture */
+            left: 41%; /* To the right of the profile picture with 10px spacing */
+            opacity: 0; /* Initially hidden */
+            animation: fade 1s infinite alternate; /* Fade in and out infinitely */
+            z-index: 500; /* Layer above other elements */
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .video-container {
+            width: 1500px;
+            height: 600px;
+            position: relative;
+            cursor: pointer;
+            margin-left: 90px;
+            margin-bottom: 5px;
+            border-radius: 1500px;
+            z-index: 3;
+        }
+
+
+        #whiteBox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7px;
+            background-color: white;
+            z-index: 9;
+        }
+
+        .popout-button-container {
+            position: relative;
+        }
+
+        .popout-button {
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            z-index: 9999;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .popout-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 9999;
+        }
+
+
+        li {
+            font-size: 36px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="logo-container">
+    <img src="images/casalogo.png" class="casalogo">
+    <img src="images/casalettered.png" class="casalettered">
+</div>
+    
+    
+
+    <div class="topbar">
+        
+<!-- Navigation button -->
+<div id="menu-button" class="menu-button">
+    <div class="firstbar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+    
+    
+<div class="section-label">
+    <span class="section-label-icon">
+        <i class="fas fa-search"></i>
+    </span>
+    <input type="text" class="search-bar" id="username-search" placeholder="Search for a username, location, size etc...">
+</div>
+    
+
+    <!-- Button Container for Icons -->
+    <div class="button-container">
+        <!-- Icon for PERSON.png (Replace with your actual image path) -->
+        <img src="images/PERSON.png" alt="Person Icon" class="person-icon">
+        
+        <!-- Icon for QUESTION.png (Replace with your actual image path) -->
+        <img src="images/QUESTION.png" alt="Question Icon" class="question-icon" id="question-button">
+    </div>
+    
+    </div>
+    
+
+<div class="profile-picture-container">
+            <img class="profile-picture" src="images/BFB.png" alt="Profile Picture" onclick="togglePopoutButtons()">
+            <div class="popout-button-container" id="popoutButtonContainer">
+                <!-- Popout buttons will be created here dynamically -->
+            </div>
+        </div>
+
+    
+<div class="profilebar">
+
+    <div class="byline-container2" id="profilebyline"> 
+    <div class="header-container2"> 
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+        
+    <div class="header-container2">      
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+
+        <div class="header-container2">        
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+        
+</div>
+    
+    <div class="top-container">
+        
+
+
+        
+            
+        <div class="video-container" onclick="playVideo()">
+            <video id="video" style="width: 100%; height: 100%; object-fit: cover;" controls>
+                <source src="PTVID2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+    </div>
+    
+
+<div class="profilebar">
+
+    <div class="byline-container3" id="profilebyline">
+        
+    <div class="header-container2"> 
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+        
+    <div class="header-container2">      
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+
+        <div class="header-container2">        
+        <h1 class="username" id="profileUsername">BalOn FlyBoy</h1>
+    </div>
+        
+</div>
+    
+  
+    
+<div class="featured-items-container">
+
+    <div class="byline-container4">
+        
+  <div class="header-container">
+    <h1>Today's Featureds</h1>
+  </div>    
+        
+    <div class="header-container">
+        <h1>Today's Featureds</h1>    
+    </div>
+        
+    <div class="header-container">
+        <h1>Today's Featureds</h1>    
+    </div>
+    
+        
+</div>
+
+
+  <div class="featured-items-wrapper">
+    <!-- The featured items will be added dynamically here -->
+  </div>
+
+
+
+    <div class="byline-container" id="ladiesbyline">
+        
+    <div class="header-container"> 
+        <h1 id="headertwo">Ladies' Profiles</h1>
+    </div>
+        
+    <div class="header-container">      
+        <h1 id="headertwo">Ladies' Profiles</h1>
+    </div>
+
+        <div class="header-container">        
+        <h1 id="headertwo">Ladies' Profiles</h1>
+    </div>
+        
+</div>
+
+
+    
+    <!-- New section label for the search form -->
+
+
+
+    
+<!-- Sidebar pop-out box -->
+<div id="sidebar" class="sidebar">
+    <h2>NovaSeek™</h2>
+    <div class="search-form">
+        <div>
+            <label for="location">Location:</label>
+            <select id="location" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="Abuja">Abuja</option>
+                <option value="Akure">Akure</option>
+                  <option value="Anambra">Anambra</option>
+                <option value="Ibadan">Ibadan</option>
+                  <option value="Lagos">Lagos</option>
+                    <option value="Ogun">Ogun</option>
+                      <option value="Osun">Osun</option>
+                        <option value="Port Harcourt">Port Harcourt</option>
+                          <option value="Plateau">Plateau</option>
+                <!-- Add more Nigerian states here -->
+            </select>
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <select id="age" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="18-21">18-21</option>
+                <option value="22-25">22-25</option>
+                <option value="26-30">26-30</option>
+                <option value="31+">31+</option>
+            </select>
+        </div>
+        <div>
+            <label for="complexion">Complexion:</label>
+            <select id="complexion" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="Cocoa">Cocoa</option>
+                <option value="Caramel">Caramel</option>
+                <option value="Vanilla">Vanilla</option>
+            </select>
+        </div>
+        <div>
+            <label for="bust">Bust:</label>
+            <select id="bust" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+        </div>
+        <div>
+            <label for="backside">Backside:</label>
+            <select id="backside" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+        </div>
+        <div>
+            <label for="special-services">Special Services:</label>
+            <select id="special-services" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="Anal">Anal</option>
+                <option value="Blowjob">Blowjob</option>
+                <option value="Titty Fuck">Titty Fuck</option>
+                  <option value="Dress Up/Role Play">Dress Up/Role Play</option>
+            </select>
+        </div>
+        <div>
+            <label for="rating">Rating:</label>
+            <select id="rating" onchange="searchProfiles()">
+                <option value="all">All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+    </div>
+</div>
+    
+
+    <div class="grid-container">
+    
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF1.gif" alt="Animated GIF" class="playing" loading="lazy">
+
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+            <p>Username: Clara_Of_Lagos</p>
+            <p>Location: Abuja</p>
+            <p>Age: 22-25</p>
+            <p>Complexion: Caramel</p>
+            <p>Bust: M</p>
+            <p>Backside: XL</p>
+            <p>Special Services: Anal, Blow job</p>
+            <p>Rating: 7</p>
+        </div>
+    </a> 
+</div>
+
+
+
+        <div class="grid-item">
+    <div class="gif-container">
+        <img src="gifs/PTGIF5.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+            <div class="parameters">
+                    <p><strong>Username:</strong> Patricia4U</p>
+                    <p><strong>Location:</strong> Anambra</p>
+                    <p><strong>Age:</strong> 26-30</p>
+                    <p><strong>Complexion:</strong> Cocoa</p>
+                    <p><strong>Bust:</strong></strong> L</p>
+                    <p><strong>Backside:</strong> L</p>
+                    <p><strong>Special services:</strong> Anal. Blow job</p>
+                    <p><strong>Rating:</strong> 7</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF11.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> CindyNaija</p>
+                    <p><strong>Location:</strong> Akure</p>
+                    <p><strong>Age:</strong> 26-30</p>
+                    <p><strong>Complexion:</strong>Cocoa</p>
+                    <p><strong>Bust:</strong> L</p>
+                    <p><strong>Backside:</strong> XL</p>
+                    <p><strong>Special services:</strong> Dress Up/Role Play</p>
+                    <p><strong>Rating:</strong> 5</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF7.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> ThatEdoBabe</p>
+                    <p><strong>Location:</strong> Anambra</p>
+                    <p><strong>Age:</strong> 31+</p>
+                    <p><strong>Complexion:</strong> Cocoa</p>
+                    <p><strong>Bust:</strong> L</p>
+                    <p><strong>Backside:</strong> M</p>
+                    <p><strong>Special services:</strong> Anal. Blow job</p>
+                    <p><strong>Rating:</strong> 10</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF8.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> Bella</p>
+                    <p><strong>Location:</strong> Osun</p>
+                    <p><strong>Age:</strong> 22-25</p>
+                    <p><strong>Complexion:</strong> Caramel</p>
+                    <p><strong>Bust:</strong> M</p>
+                    <p><strong>Backside:</strong> M</p>
+                    <p><strong>Special services:</strong> Anal. Blow job</p>
+                    <p><strong>Rating:</strong> 5</p>
+                </div>
+            </a>
+        </div>
+
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF10.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> Cindy</p>
+                    <p><strong>Location:</strong> Ogun</p>
+                    <p><strong>Age:</strong> 31+</p>
+                    <p><strong>Complexion:</strong> Cocoa</p>
+                    <p><strong>Bust:</strong> XL</p>
+                    <p><strong>Backside:</strong> L</p>
+                    <p><strong>Special services:</strong> Anal. Blow job</p>
+                    <p><strong>Rating:</strong> 10</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF9.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> DemGoTire</p>
+                    <p><strong>Location:</strong> Abuja</p>
+                    <p><strong>Age:</strong> 22-25</p>
+                    <p><strong>Complexion:</strong> Cocoa</p>
+                    <p><strong>Bust:</strong> M</p>
+                    <p><strong>Backside:</strong> M</p>
+                    <p><strong>Special services:</strong> Dress Up/Role Play</p>
+                    <p><strong>Rating:</strong> 10</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF3.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> Damife4rmNaija</p>
+                    <p><strong>Location:</strong> Ogun</p>
+                    <p><strong>Age:</strong> 22-25</p>
+                    <p><strong>Complexion:</strong>Caramel</p>
+                    <p><strong>Bust:</strong> XL</p>
+                    <p><strong>Backside:</strong> L</p>
+                    <p><strong>Special services:</strong> Anal. Blow job</p>
+                    <p><strong>Rating:</strong> 6</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF1.gif" alt="Animated GIF" class="playing" loading="lazy">
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> Seunfunmi</p>
+                    <p><strong>Location:</strong> Akure</p>
+                    <p><strong>Age:</strong> 31+</p>
+                    <p><strong>Complexion:</strong> Vanilla</p>
+                    <p><strong>Bust:</strong> X</p>
+                    <p><strong>Backside:</strong> XL</p>
+                    <p><strong>Special services:</strong> Blowjob</p>
+                    <p><strong>Rating:</strong> 6</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="grid-item">
+    <div class="gif-container">
+     <img src="gifs/PTGIF2.gif" alt="Animated GIF" class="playing" loading="lazy">
+
+    </div>
+   <a href="protoprofile.html">
+        <div class="parameters">
+                    <p><strong>Username:</strong> BeauT</p>
+                    <p><strong>Location:</strong> Lagos</p>
+                    <p><strong>Age:</strong> 18-21</p>
+                    <p><strong>Complexion:</strong> Caramel</p>
+                    <p><strong>Bust:</strong> XXL</p>
+                    <p><strong>Backside:</strong> L</p>
+                    <p><strong>Special services:</strong> Anal. Blow job</p>
+                    <p><strong>Rating:</strong> 4</p>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Add more grid items here -->
+
+
+<div class="floating-emojis">
+    <div class="emoji">🥒</div>
+    <div class="emoji">🍑</div>
+    <div class="emoji">😛</div>
+    <div class="emoji">💦</div>
+</div>
+
+
+        <!-- Pop-up box content -->
+    <div class="popup" id="popupBox">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <h2>HOW TO USE THE SEARCH INTERFACE</h2>
+        <ol>
+            <li>For an EASY, QUALITY and PRECISE SEARCH, use <strong>NovaSeek™</strong>.<br><br> Tap on THE RED NAVIGATION BUTTON in the TOP LEFT CORNER of the page and the page autoscrolls down to "Ladies' Profiles" for you. So, select your criteria in any or all of the boxes and the search results grid will fetch profiles that match your selection to the top of the results Immediately. <br><br> So just go back to Profiles once you're done selecting.</li>
+            <p></p>
+            <li>Profiles that match 4 of your WANTS will be listed first before profiles that match 3 are. And then 2, 1, and 0.</li>
+            <p></p>
+            <li>Any result that doesn't match your LOCATION SELECTION will not be displayed. To get all results, keep it in ALL.</li>
+            <p></p>
+            <li>For BASIC SEARCH use the search bar.</li>
+            <p></p>
+            <li> Click on the corner PROFILE INFO BOX TO GO TO HER MAIN PROFILE. You'll be redirected to a new browser tab/window to avoid refreshing your Search selection. Final Tip: HAVE FUN.</li>
+           
+        </ol>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.getElementById("menu-button");
+    const sidebar = document.getElementById("sidebar");
+
+    menuButton.addEventListener("click", function () {
+        sidebar.classList.toggle("open");
+    });
+
+    // Add a click event listener to the document body
+    document.body.addEventListener("click", function (event) {
+        // Check if the clicked element is not inside the sidebar
+        if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+            // If the click occurred outside the sidebar and menu button, close the sidebar
+            sidebar.classList.remove("open");
+        }
+    });
+});
+
+        
+// Get the search bar element
+const searchBar = document.getElementById('username-search');
+
+// Get all the grid items
+const gridItems = document.querySelectorAll('.grid-item');
+
+// Add an event listener to the search bar
+searchBar.addEventListener('input', () => {
+    const searchTerm = searchBar.value.toLowerCase(); // Get the lowercase search term
+
+    // Loop through grid items and hide/show based on the search term
+    gridItems.forEach((item) => {
+        const itemText = item.textContent.toLowerCase(); // Get the lowercase text content of the grid item
+
+        // Check if any part of the grid item contains the search term
+        if (itemText.includes(searchTerm)) {
+            item.style.display = 'block'; // Show the grid item
+        } else {
+            item.style.display = 'none'; // Hide the grid item
+        }
+    });
+});        
+    </script>
+
+    
+<script src="searchsystem.js"></script>
+
+
+    <script>(function(){var js,fs,d=document,id="tars-widget-script",b="https://tars-file-upload.s3.amazonaws.com/bulb/";if(!d.getElementById(id)){js=d.createElement("script");js.id=id;js.type="text/javascript";js.src=b+"js/widget.js";fs=d.getElementsByTagName("script")[0];fs.parentNode.insertBefore(js,fs)}})();window.tarsSettings = {"convid": "fEJ061", "href": "https://chatbot.hellotars.com/conv/fEJ061"};</script>
+
+    <script>
+        
+// Function to move multiple grids side by side like a conveyor belt
+function moveGrids() {
+  const gridContainer = document.querySelector('.grid-container');
+  const gridItems = Array.from(document.querySelectorAll('.grid-item'));
+  const featuredContainer = document.querySelector('.featured-items-wrapper');
+
+  // Number of grids to display side by side
+  const numGridsToShow = 2;
+  let currentIndex = 0;
+
+  // Function to display the next set of grid items
+  function displayNextGridItems() {
+    // Clear the featured items wrapper
+    featuredContainer.innerHTML = '';
+
+    for (let i = 0; i < numGridsToShow; i++) {
+      // Get the next grid item
+      const currentItem = gridItems[currentIndex].cloneNode(true);
+      featuredContainer.appendChild(currentItem);
+
+      // Increment the current index or reset to 0 if reached the end
+      currentIndex = (currentIndex + 1) % gridItems.length;
+    }
+  }
+
+  // Display the initial set of grid items
+  displayNextGridItems();
+
+  // Set an interval to display grid items continuously
+  const interval = setInterval(() => {
+    // Create a sliding effect by moving the featured items wrapper to the left
+    featuredContainer.style.transition = 'transform 0.5s';
+    featuredContainer.style.transform = 'translateX(-100%)';
+
+    // After the transition, reset the position and display the next set of grid items
+    setTimeout(() => {
+      featuredContainer.style.transition = 'none';
+      featuredContainer.style.transform = 'translateX(0)';
+      displayNextGridItems();
+    }, 500); // Adjust the timing as needed
+
+  }, 5000); // Change the interval duration as needed (e.g., 5000 milliseconds)
+
+  // Stop the interval when the page is unloaded (optional)
+  window.addEventListener('beforeunload', () => {
+    clearInterval(interval);
+  });
+}
+
+// Call the function to start moving grids side by side
+moveGrids();
+
+</script>
+
+
+<script>
+
+    let popoutButtonsVisible = false;
+
+        function togglePopoutButtons() {
+            const popoutButtonContainer = document.getElementById('popoutButtonContainer');
+
+            if (popoutButtonsVisible) {
+                // Hide the popout buttons
+                popoutButtonContainer.style.transform = 'scale(0)';
+                popoutButtonsVisible = false;
+            } else {
+                // Show the popout buttons
+                popoutButtonContainer.style.transform = 'scale(1)';
+                popoutButtonsVisible = true;
+            }
+        }
+
+    // Function to create and append popout buttons in a semi-circle
+    function createPopoutButtons() {
+        const popoutButtonContainer = document.getElementById('popoutButtonContainer');
+        const numButtons = 3; // Number of buttons
+        const radius = 185; // Radius of the semi-circle
+        const xOffset = 870; // Adjust this value to control horizontal spacing
+        const yOffset = -370; // Adjust this value to shift the buttons upwards
+
+        const animations = []; // Array to store animation IDs
+
+        const buttonRedirects = [
+            'brandprofile.html', // Redirect URL for POPOUT1.png
+            'popout2.html', // Redirect URL for POPOUT2.png
+            'popout3.html'  // Redirect URL for POPOUT3.png
+        ];
+
+        for (let i = 0; i < numButtons; i++) {
+            const angle = (Math.PI / numButtons) * i - Math.PI / 2; // Calculate angle for positioning
+            const x = xOffset + radius * Math.cos(angle); // X-coordinate (adjusted for horizontal spacing)
+            const y = yOffset + radius * Math.sin(angle); // Y-coordinate (adjusted to shift upwards)
+
+            const button = document.createElement('div');
+            button.className = 'popout-button';
+            button.style.transform = `translate(${x}px, ${y}px)`; // Position along the semi-circle
+            button.innerHTML = `<img src="images/POPOUT${i + 1}.png" alt="Popout Button ${i + 1}">`;
+            popoutButtonContainer.appendChild(button);
+
+            // Add click event listener to redirect when clicked
+            button.addEventListener('click', () => {
+                window.location.href = buttonRedirects[i];
+            });
+
+            // Add animation function to the array
+            animations.push(() => {
+                const scaleFactor = 2.35; // Scale factor for animation
+                button.style.transform = `translate(${x}px, ${y}px) scale(${scaleFactor})`;
+
+                // Use setTimeout to reverse the animation after a short delay
+                setTimeout(() => {
+                    button.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+                }, 100); // Adjust the delay as needed
+            });
+        }
+
+        // Set a high z-index for the popout button container
+        popoutButtonContainer.style.zIndex = '500';
+
+        // Function to start the animation loop
+        function startAnimationLoop() {
+            let currentIndex = 0;
+
+            setInterval(() => {
+                animations[currentIndex](); // Execute the animation function
+                currentIndex = (currentIndex + 1) % numButtons; // Cycle through buttons
+            }, 300); // Adjust the animation speed as needed
+        }
+
+        startAnimationLoop();
+    }
+
+    // Hide popout buttons initially
+    const popoutButtonContainer = document.getElementById('popoutButtonContainer');
+    popoutButtonContainer.style.transform = 'scale(0)';
+
+    createPopoutButtons();
+</script>
+
+    
+
+    <script>
+        document.getElementById("menu-button").addEventListener("click", function() {
+            const headerTwo = document.getElementById("headertwo");
+            
+            // Scroll to the "Ladies' Profiles" section smoothly
+            headerTwo.scrollIntoView({ behavior: "smooth" });
+        });         
+    </script>
+
+        <script>
+        const profilePicture = document.querySelector('.profile-picture');
+        const topContainer = document.querySelector('.top-container');
+
+        // Create the speech bubble element
+        const speechBubble = document.createElement('img');
+        speechBubble.src = 'images/CLICKME.png';
+        speechBubble.alt = 'Click Me';
+        speechBubble.classList.add('speech-bubble');
+        topContainer.appendChild(speechBubble);
+
+        profilePicture.addEventListener('touchstart', () => {
+            // When you tap on the profile picture, remove the speech bubble permanently
+            if (speechBubble) {
+                topContainer.removeChild(speechBubble);
+                speechBubble = null; // Remove reference to speech bubble
+            }
+            profilePicture.classList.add('expanded');
+        });
+
+        profilePicture.addEventListener('touchend', () => {
+            profilePicture.classList.remove('expanded');
+        });
+    </script>
+
+    <!-- Touch Expand Function -->
+    <script>
+        profilePicture.addEventListener('touchstart', () => {
+            profilePicture.classList.add('expanded');
+        });
+
+        profilePicture.addEventListener('touchend', () => {
+            profilePicture.classList.remove('expanded');
+        });
+    </script>
+    
+</body>
+</html>
+ 

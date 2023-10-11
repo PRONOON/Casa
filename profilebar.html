@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Profile</title>
+
+    <style>
+       body {
+            font-family: 'Cursive', sans-serif;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            background-color: #ff4D4D;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        .top-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: white; /* Add white background color */
+            border-radius: 15px; /* Add border radius for curved edges */
+
+            position: relative; /* Set relative positioning for the container */
+           
+        
+        }
+
+        .profile-picture-container {
+            position: relative; /* Needed for absolute positioning */
+        }
+
+       
+        .profile-picture {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            margin-left: 0px;
+            margin-bottom: 8px;
+            object-position: top; /* Show the top of the image */
+            margin-right: 30px;
+            transition: transform 0.3s ease; /* Add a transition for the transform property */
+            border: 8px solid #ffb6c1; /* Add a border with the specified color */
+        
+        }
+
+        .profile-picture.expanded {
+            transform: scale(1.5); /* Enlarge the picture when expanded */
+        }
+
+        /* Style for the speech bubble */
+        .speech-bubble {
+            width: 85px;
+            position: absolute;
+            top: -28px; /* 3px above the profile picture */
+            left: 43.5px; /* To the right of the profile picture with 10px spacing */
+            opacity: 0; /* Initially hidden */
+            animation: fade 1s infinite alternate; /* Fade in and out infinitely */
+            z-index: 999999; /* Layer above other elements */
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .video-container {
+            width: 1500px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            margin-left: 30px;
+            margin-bottom: 5px;
+            border-radius: 1500px;
+            z-index: 3;
+        }
+
+
+        #whiteBox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 7px;
+            background-color: white;
+            z-index: 9;
+        }
+
+        .popout-button-container {
+            position: relative;
+        }
+
+        .popout-button {
+            width: 80px;
+            height: 80px;
+            background-color: #ff4D4D;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            z-index: 9999;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .popout-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 9999;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="profilebar">
+    <h1 class="username" id="profileUsername">FunkeOfLagos</h1>
+    
+    <div class="top-container">
+        <div class="profile-picture-container">
+            <img class="profile-picture" src="PTIMG.jpeg" alt="Profile Picture" onclick="togglePopoutButtons()">
+            <div class="popout-button-container" id="popoutButtonContainer">
+                <!-- Popout buttons will be created here dynamically -->
+            </div>
+        </div>
+        <div class="video-container" onclick="playVideo()">
+            <video id="video" style="width: 100%; height: 100%; object-fit: cover;" controls>
+                <source src="PTVID2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        let popoutButtonsVisible = false;
+
+        function togglePopoutButtons() {
+            const popoutButtonContainer = document.getElementById('popoutButtonContainer');
+
+            if (popoutButtonsVisible) {
+                // Hide the popout buttons
+                popoutButtonContainer.style.transform = 'scale(0)';
+                popoutButtonsVisible = false;
+            } else {
+                // Show the popout buttons
+                popoutButtonContainer.style.transform = 'scale(1)';
+                popoutButtonsVisible = true;
+            }
+        }
+
+    // Function to create and append popout buttons in a semi-circle
+    function createPopoutButtons() {
+        const popoutButtonContainer = document.getElementById('popoutButtonContainer');
+        const numButtons = 3; // Number of buttons
+        const radius = 90; // Radius of the semi-circle
+        const xOffset = 55; // Adjust this value to control horizontal spacing
+        const yOffset = -135; // Adjust this value to shift the buttons upwards
+
+        const animations = []; // Array to store animation IDs
+
+        const buttonRedirects = [
+            'popout1.html', // Redirect URL for POPOUT1.png
+            'popout2.html', // Redirect URL for POPOUT2.png
+            'popout3.html'  // Redirect URL for POPOUT3.png
+        ];
+
+        for (let i = 0; i < numButtons; i++) {
+            const angle = (Math.PI / numButtons) * i - Math.PI / 2; // Calculate angle for positioning
+            const x = xOffset + radius * Math.cos(angle); // X-coordinate (adjusted for horizontal spacing)
+            const y = yOffset + radius * Math.sin(angle); // Y-coordinate (adjusted to shift upwards)
+
+            const button = document.createElement('div');
+            button.className = 'popout-button';
+            button.style.transform = `translate(${x}px, ${y}px)`; // Position along the semi-circle
+            button.innerHTML = `<img src="POPOUT${i + 1}.png" alt="Popout Button ${i + 1}">`;
+            popoutButtonContainer.appendChild(button);
+
+            // Add click event listener to redirect when clicked
+            button.addEventListener('click', () => {
+                window.location.href = buttonRedirects[i];
+            });
+
+            // Add animation function to the array
+            animations.push(() => {
+                const scaleFactor = 2.05; // Scale factor for animation
+                button.style.transform = `translate(${x}px, ${y}px) scale(${scaleFactor})`;
+
+                // Use setTimeout to reverse the animation after a short delay
+                setTimeout(() => {
+                    button.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+                }, 100); // Adjust the delay as needed
+            });
+        }
+
+        // Set a high z-index for the popout button container
+        popoutButtonContainer.style.zIndex = '9999';
+
+        // Function to start the animation loop
+        function startAnimationLoop() {
+            let currentIndex = 0;
+
+            setInterval(() => {
+                animations[currentIndex](); // Execute the animation function
+                currentIndex = (currentIndex + 1) % numButtons; // Cycle through buttons
+            }, 300); // Adjust the animation speed as needed
+        }
+
+        startAnimationLoop();
+    }
+
+    // Hide popout buttons initially
+    const popoutButtonContainer = document.getElementById('popoutButtonContainer');
+    popoutButtonContainer.style.transform = 'scale(0)';
+
+    createPopoutButtons();
+</script>
+
+
+<script>
+        const profilePicture = document.querySelector('.profile-picture');
+        const topContainer = document.querySelector('.top-container');
+
+        // Create the speech bubble element
+        const speechBubble = document.createElement('img');
+        speechBubble.src = 'CLICKME.png';
+        speechBubble.alt = 'Click Me';
+        speechBubble.classList.add('speech-bubble');
+        topContainer.appendChild(speechBubble);
+
+        profilePicture.addEventListener('touchstart', () => {
+            // When you tap on the profile picture, remove the speech bubble permanently
+            if (speechBubble) {
+                topContainer.removeChild(speechBubble);
+                speechBubble = null; // Remove reference to speech bubble
+            }
+            profilePicture.classList.add('expanded');
+        });
+
+        profilePicture.addEventListener('touchend', () => {
+            profilePicture.classList.remove('expanded');
+        });
+    </script>
+
+    <!-- Touch Expand Function -->
+    <script>
+        profilePicture.addEventListener('touchstart', () => {
+            profilePicture.classList.add('expanded');
+        });
+
+        profilePicture.addEventListener('touchend', () => {
+            profilePicture.classList.remove('expanded');
+        });
+    </script>
+    
+    
+</body>
+</html>
