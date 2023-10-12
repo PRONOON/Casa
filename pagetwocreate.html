@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+            font-family: cursive;
+        }
+        .profile-form {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .profile-form label {
+            display: block;
+            margin: 10px 0;
+        }
+        .profile-form input,
+        .profile-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="casanova-profile-form" class="profile-form" method="post" action="mailto:casanovanigeria@gmail.com" enctype="multipart/form-data">
+        <label for="image1">Image One:</label>
+        <input type="file" id="image1" name="image1" accept="image/*" required>
+        
+        <label for="image2">Image Two:</label>
+        <input type="file" id="image2" name="image2" accept="image/*" required>
+        
+        <label for="bio-video">Bio Video:</label>
+        <input type="file" id="bio-video" name="bio_video" accept="video/*" required>
+
+        <label for="bio-text">Bio Text:</label>
+        <textarea id="bio-text" name="bio_text" required></textarea>
+        
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
