@@ -133,35 +133,9 @@ body {
     gap: 0px;
 }
 
-    .profile-selection {
-            text-align: center;
-            background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-        }
-
-        .profile-selection h2 {
-            font-size: 24px;
-        }
-
-        .profile-selection button {
-            background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-        }
-
-        .profile-selection button:hover {
-            background-color: #ff3333;
-        }
-</style>
 
     
-   
+</style>
 
 
 </head>
@@ -171,23 +145,29 @@ body {
     </div>
     <div class="loading-animation">
         <div class="loader"></div>
-        
-    <!-- Your HTML with IDs added for styling -->
-<div class="button-container hidden">
-        <a href="brandgrid.html" class="app-button find">
-            <img src="images/MAGNIFIERBGL.png" alt="Magnifier Icon" class="findicon">
-            FIND "HER"
-        </a>
-        <a href="#" class="app-button" onclick="showProfileSelection()">
-            <img src="images/PERSONBGL.png" alt="Person Icon" class="personicon">
-            CREATE PROFILE
-        </a>
-        <a href="https://chatbot.hellotars.com/conv/fEJ061" class="app-button">
-            <img src="images/QUESTIONBGL.png" alt="Question Icon" class="question">
-            FAQBot (INQUIRIES)
-        </a>
     </div>
+    <div class="button-container hidden">
+        <a href="brandgrid.html" class="app-button find">
+    <img src="images/MAGNIFIERBGL.png" alt="Magnifier Icon" class="findicon">
+    FIND "HER"
+</a>
+        
+<a href="createprofile.html" class="app-button">
+    <img src="images/PERSONBGL.png" alt="Person Icon" class="personicon">
+   CREATE PERSONAL PROFILE
+</a>
+        
+<a href="https://wa.me/2347088915856" class="app-button">
+    <img src="images/PERSONBGL.png" alt="Person Icon" class="personicon">
+   CREATE BRAND PROFILE
+</a>
+        
+<a href="https://chatbot.hellotars.com/conv/fEJ061" class="app-button">
+    <img src="images/QUESTIONBGL.png" alt="Question Icon" class="question">
+    FAQBot (INQUIRIES)
+</a>
 
+    </div>
 
     <script>
     // Wait for the loading animation to finish 7 cycles
@@ -245,17 +225,6 @@ body {
 </script>
 
 
-<script>
-        // Wait for the loading animation to finish
-        setTimeout(() => {
-            // Hide loading animation
-            document.querySelector('.loading-animation').style.display = 'none';
-            // Show buttons
-            document.querySelector('.button-container').classList.remove('hidden');
-            document.querySelector('.button-container').classList.add('visible');
-        }, 3000); // 3 seconds
-    </script>
-        
 
 
 
@@ -264,4 +233,4 @@ body {
 
      
 </body>
-</html>
+</html> 
