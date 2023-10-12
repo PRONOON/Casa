@@ -103,6 +103,36 @@
         }
     }
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500%;
+    width: 1350px;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: white;
+    font-size: 25px;
+    line-height: 1.5;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.popup-close {
+    float: right;
+    cursor: pointer;
+    font-size: 120px;
+    line-height: 1;
+}
+
+        
         
     </style>
 </head>
@@ -136,5 +166,42 @@
         
         <button type="submit" class="submit">Submit</button>
     </form>
+    
+<!-- Pop-up box content -->
+<div class="popup" id="createProfilePopup">
+    <span class="popup-close" onclick="closeCreateProfilePopup()">&times;</span>
+    <h2>CREATE YOUR CASANOVA PROFILE</h2>
+    <ol>
+        <li>Fill in the details on this page to create an account.</li>
+        <p></p>
+        <li>Casanova does not allow instant profile creation to protect the integrity of our platform from dubious usage. All profiles have to undergo The Nova Verification Process.</li>
+        <p></p>
+        <li>All profiles are uploaded to the website within 24 hours once your provided details are verified.</li>
+        <p></p>
+        <li>Confirm that all the provided details are correct to prevent your profile creation process from being terminated.</li>
+    </ol>
+</div>
+
+<script>
+    // Function to show the create profile popup
+    function showCreateProfilePopup() {
+        var createProfilePopup = document.getElementById("createProfilePopup");
+        createProfilePopup.style.display = "block";
+    }
+
+    // Function to close the create profile popup
+    function closeCreateProfilePopup() {
+        var createProfilePopup = document.getElementById("createProfilePopup");
+        createProfilePopup.style.display = "none";
+    }
+
+    // Call the function to show the create profile popup when the page loads
+    window.onload = function() {
+        showCreateProfilePopup();
+    }
+</script>
+
+    
+    
 </body>
 </html>
