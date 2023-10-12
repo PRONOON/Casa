@@ -2,14 +2,20 @@
 <html>
 <head>
     <style>
+        html, body {
+            height: 100%;
+        }
         body {
+            margin: 0; /* Remove default margin */
             background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
             font-family: cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .profile-form {
             width: 100%;
             max-width: 500px;
-            margin: 0 auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
@@ -35,7 +41,7 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         
-        <label for="username">Preferred Username:</label>
+        <label for "username">Preferred Username:</label>
         <input type="text" id="username" name="username" required>
         
         <label for="phone">Phone number:</label>
