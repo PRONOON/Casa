@@ -145,21 +145,21 @@ body {
     </div>
     <div class="loading-animation">
         <div class="loader"></div>
+        
     </div>
-    <div class="button-container hidden">
+      <div class="button-container hidden">
         <a href="brandgrid.html" class="app-button find">
-    <img src="images/MAGNIFIERBGL.png" alt="Magnifier Icon" class="findicon">
-    FIND "HER"
-</a>
-<a href="https://t.me/HaremIsABot" class="app-button">
-    <img src="images/PERSONBGL.png" alt="Person Icon" class="personicon">
-   CREATE PROFILE
-</a>
-<a href="https://chatbot.hellotars.com/conv/fEJ061" class="app-button">
-    <img src="images/QUESTIONBGL.png" alt="Question Icon" class="question">
-    FAQBot (INQUIRIES)
-</a>
-
+            <img src="images/MAGNIFIERBGL.png" alt="Magnifier Icon" class="findicon">
+            FIND "HER"
+        </a>
+        <a href="#" class="app-button" onclick="showProfileSelection()">
+            <img src="images/PERSONBGL.png" alt="Person Icon" class="personicon">
+            CREATE PROFILE
+        </a>
+        <a href="https://chatbot.hellotars.com/conv/fEJ061" class="app-button">
+            <img src="images/QUESTIONBGL.png" alt="Question Icon" class="question">
+            FAQBot (INQUIRIES)
+        </a>
     </div>
 
     <script>
@@ -218,6 +218,37 @@ body {
 </script>
 
 
+<script>
+        // Wait for the loading animation to finish
+        setTimeout(() => {
+            // Hide loading animation
+            document.querySelector('.loading-animation').style.display = 'none';
+            // Show buttons
+            document.querySelector('.button-container').classList.remove('hidden');
+            document.querySelector('.button-container').classList.add('visible');
+        }, 3000); // 3 seconds
+
+        // Function to show profile selection form
+        function showProfileSelection() {
+            const selectionForm = document.createElement("div");
+            selectionForm.innerHTML = `
+                <h2>Choose Profile Type</h2>
+                <button onclick="redirectToWhatsApp()">Create Brand Profile</button>
+                <button onclick="redirectToCreateProfile()">Create Personal Profile</button>
+            `;
+            document.body.appendChild(selectionForm);
+        }
+
+        // Function to redirect to WhatsApp
+        function redirectToWhatsApp() {
+            window.location.href = 'https://wa.me/2347088915856';
+        }
+
+        // Function to redirect to createprofile.html
+        function redirectToCreateProfile() {
+            window.location.href = 'createprofile.html';
+        }
+    </script>
 
 
 
