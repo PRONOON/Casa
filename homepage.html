@@ -256,17 +256,7 @@ body {
 
 
 <script>
-        // Wait for the loading animation to finish
-        setTimeout(() => {
-            // Hide loading animation
-            document.querySelector('.loading-animation').style.display = 'none';
-            // Show buttons
-            document.querySelector('.button-container').classList.remove('hidden');
-            document.querySelector('.button-container').classList.add('visible');
-        }, 3000); // 3 seconds
-    
-
-// Function to show profile selection form
+    // Function to show profile selection form
     function showProfileSelection() {
         const selectionForm = document.createElement("div");
         selectionForm.id = "selection-form"; // Apply the styles to this div
@@ -277,17 +267,28 @@ body {
         `;
         document.body.appendChild(selectionForm);
     }
-    
-        // Function to redirect to WhatsApp
-        function redirectToWhatsApp() {
-            window.location.href = 'https://wa.me/2347088915856';
-        }
 
-        // Function to redirect to createprofile.html
-        function redirectToCreateProfile() {
-            window.location.href = 'createprofile.html';
-        }
-    </script>
+    // Function to redirect to WhatsApp
+    function redirectToWhatsApp() {
+        window.location.href = 'https://wa.me/2347088915856';
+    }
+
+    // Function to redirect to createprofile.html
+    function redirectToCreateProfile() {
+        window.location.href = 'createprofile.html';
+    }
+
+    // Wait for the loading animation to finish
+    setTimeout(() => {
+        // Hide loading animation
+        document.querySelector('.loading-animation').style.display = 'none';
+        // Show buttons
+        const buttonContainer = document.querySelector('.button-container');
+        buttonContainer.classList.remove('hidden');
+        buttonContainer.classList.add('visible');
+    }, 3000); // 3 seconds
+</script>
+
 
         
 
