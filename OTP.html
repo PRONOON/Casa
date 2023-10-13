@@ -163,6 +163,16 @@ body {
             }
         }
     </script>
+
+<script>
+// Prevent redirection to the FormSubmit.io error page
+window.addEventListener("beforeunload", function (e) {
+  e.preventDefault();
+  e.returnValue = '';
+});
+</script>
+
+    
 </body>
 </html>
 
