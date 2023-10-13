@@ -225,9 +225,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('casanova-profile-form');
 
     form.addEventListener('submit', function (e) {
-        e.preventDefault();
+        // Add your form validation logic here if needed.
+        // If the form is valid, allow it to be submitted.
 
         // You can add any other processing here if needed.
+
+        // Listen for the form's submit event, and prevent the default behavior
+        e.preventDefault();
 
         // Display success message
         const successMessage = document.createElement('div');
@@ -239,9 +243,13 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
             window.close();
         }, 3000); // 3000 milliseconds (3 seconds)
+
+        // Trigger the form's submission programmatically (assuming the form is valid)
+        form.submit();
     });
 });
 </script>
+
 
     
 </body>
