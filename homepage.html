@@ -234,6 +234,23 @@ body {
 </script>
 
 
+<script>
+  // Listen for all anchor link clicks
+  document.addEventListener('click', function (event) {
+    if (event.target.tagName === 'A') {
+      // Check if the anchor link is an external link (starts with http or https)
+      if (
+        !event.target.href.startsWith('http://') &&
+        !event.target.href.startsWith('https://')
+      ) {
+        // Prevent the default behavior of the anchor link
+        event.preventDefault();
+        // Perform any custom actions you need here (e.g., show a message)
+        console.log('Custom action: Link click prevented');
+      }
+    }
+  });
+</script>
 
 
 
