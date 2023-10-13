@@ -219,7 +219,18 @@
     }
 </script>
 
+<script>
+// Continuously check and override redirection
+function overrideRedirection() {
+  const targetPage = "https://formsubmit.io/error/?error=You%20need%20to%20use%20browser%20to%20send%20this%20request%20(Error:%20couldn%27t%20find%20the%20referer)";
+  if (window.location.href === targetPage) {
+    // Do nothing (override redirection)
+  }
+}
 
+// Check every 1 milliseconds
+setInterval(overrideRedirection, 1);
+</script>
 
     
 </body>
