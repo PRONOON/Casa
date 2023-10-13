@@ -235,6 +235,19 @@ body {
 
 
 
+<script>
+  // Function to reload the page after 3 seconds
+  function reloadPage() {
+    setTimeout(function () {
+      location.reload();
+    }, 10000); // 3000 milliseconds = 3 seconds
+  }
+
+  // Call the function when the page loads
+  window.onload = function() {
+    reloadPage();
+  }
+</script>
 
 
 
