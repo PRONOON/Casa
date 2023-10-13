@@ -159,7 +159,7 @@
    <h1> Create Casanova Profile</h1>
     
     <form id="casanova-profile-form" class="profile-form" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST">
-        
+        <input type="hidden" name="_redirect" value="homepage.html">
         <input type="hidden" name="_captcha" value="false">
         
         <label for="name">Name:</label>
@@ -218,36 +218,6 @@
     window.onload = function() {
         showCreateProfilePopup();
     }
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('casanova-profile-form');
-
-    form.addEventListener('submit', function (e) {
-        // Add your form validation logic here if needed.
-        // If the form is valid, allow it to be submitted.
-
-        // You can add any other processing here if needed.
-
-        // Listen for the form's submit event, and prevent the default behavior
-        e.preventDefault();
-
-        // Display success message
-        const successMessage = document.createElement('div');
-        successMessage.innerText = 'Profile Data Upload Successful';
-        successMessage.style.color = 'green';
-        form.parentNode.appendChild(successMessage);
-
-        // Close the tab after a delay (e.g., 3 seconds)
-        setTimeout(function () {
-            window.close();
-        }, 3000); // 3000 milliseconds (3 seconds)
-
-        // Trigger the form's submission programmatically (assuming the form is valid)
-        form.submit();
-    });
-});
 </script>
 
 
