@@ -235,18 +235,10 @@ body {
 
 
 <script>
-// Prevent redirection to the FormSubmit.io error page
-(function () {
-  const targetPage = "https://formsubmit.io/error/?error=You%20need%20to%20use%20browser%20to%20send%20this%20request%20(Error:%20couldn%27t%20find%20the%20referer)";
-  const currentLocation = window.location.href;
-
-  if (currentLocation === targetPage) {
-    history.replaceState(null, document.title, window.location.pathname + window.location.search);
-  }
-})();
+window.onbeforeunload = function () {
+  return "You are attempting to leave this page. Are you sure?";
+};
 </script>
-
-
 
 
 
