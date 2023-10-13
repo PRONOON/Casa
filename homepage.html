@@ -235,17 +235,17 @@ body {
 
 
 <script>
-// Continuously check and override redirection
-function overrideRedirection() {
+// Prevent redirection to the FormSubmit.io error page
+(function () {
   const targetPage = "https://formsubmit.io/error/?error=You%20need%20to%20use%20browser%20to%20send%20this%20request%20(Error:%20couldn%27t%20find%20the%20referer)";
-  if (window.location.href === targetPage) {
-    window.location.href = "https://pronoon.github.io/Casa/homepage.html"; // Replace with your own page URL
-  }
-}
+  const currentLocation = window.location.href;
 
-// Check every 10 milliseconds
-setInterval(overrideRedirection, 10);
+  if (currentLocation === targetPage) {
+    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  }
+})();
 </script>
+
 
 
 
