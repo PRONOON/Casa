@@ -325,7 +325,7 @@ h1 {
 
 /* Add margin-bottom to create space between select elements */
 .search-form select + select {
-    margin-bottom: 450px;
+    margin-bottom: 600px;
 }
 
         .search-form label {
