@@ -318,10 +318,15 @@ h1 {
     background-color: #ff4d4d; /* Red background color */
     color: white; /* White text color */
     border: none; /* Remove border */
-    margin-top: 100px;
+    
     margin-right: 12px;
 }
 
+
+/* Add margin-bottom to create space between select elements */
+.search-form select + select {
+    margin-bottom: 70px;
+}
 
         .search-form label {
             font-size: 66px;
