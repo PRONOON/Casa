@@ -18,6 +18,7 @@
     var bust = document.getElementById("bust").value;
     var backside = document.getElementById("backside").value;
     var specialServices = document.getElementById("special-services").value;
+    var faceGame = document.getElementById("face-game").value;
     var rating = document.getElementById("rating").value;
 
     var profiles = document.getElementsByClassName("grid-item");
@@ -31,7 +32,8 @@
       if (location === "all" || profileLocation === location) {
         matches++;
 
-        if (profileMatchesCriteria(profile, "age", age)) matches++;
+       if (profileMatchesCriteria(profile, "face game", faceGame)) matches++;
+       if (profileMatchesCriteria(profile, "age", age)) matches++;
         if (profileMatchesCriteria(profile, "complexion", complexion)) matches++;
         if (profileMatchesCriteria(profile, "bust", bust)) matches++;
         if (profileMatchesCriteria(profile, "backside", backside)) matches++;
