@@ -318,7 +318,7 @@ h1 {
     background-color: #ff4d4d; /* Red background color */
     color: white; /* White text color */
     border: none; /* Remove border */
-    margin-top: 40px;
+    margin-top: 20px;
     margin-right: 12px;
 }
 
@@ -329,6 +329,7 @@ h1 {
             margin-bottom: 5px;
             font-family: 'Cursive', cursive; 
             color: white;
+            margin-top: 50px;
         }
 
 
