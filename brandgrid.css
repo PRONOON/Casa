@@ -311,9 +311,9 @@ h1 {
 
 /* Style the search form selections */
 .search-form select {
-    width: 100%;
+    width: 110%;
     padding: 35px 10px; /* Increase vertical padding while keeping horizontal padding the same */
-    font-size: 30px;
+    font-size: 45px;
     border-radius: 65px;
     background-color: #ff4d4d; /* Red background color */
     color: white; /* White text color */
@@ -324,7 +324,7 @@ h1 {
 
 
         .search-form label {
-            font-size: 60px;
+            font-size: 66px;
             font-weight: bold;
             margin-bottom: 5px;
             font-family: 'Cursive', cursive; 
