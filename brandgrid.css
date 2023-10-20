@@ -267,8 +267,8 @@ h1 {
         .sidebar {
     position: fixed;
     top: 0;
-    left: -780px; /* Initially hide the sidebar off-screen to the left */
-    width: 780px; /* Adjust the width to 600px */
+    left: -825px; /* Initially hide the sidebar off-screen to the left */
+    width: 825px; /* Adjust the width to 600px */
     height: 100%;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Use the same gradient as grid parameters */
         
