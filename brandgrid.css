@@ -34,7 +34,7 @@
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Add margin to separate from the navigation button */
-    animation: fadeInOut 2s infinite;
+    /* animation: fadeInOut 2s infinite; */
 }
 
 /* Style for casalettered.png */
