@@ -147,7 +147,46 @@
             text-align: center;
         } 
                 
-       
+
+
+
+/* Style the Select File button */
+#attachment {
+    display: none; /* Hide the default file input */
+}
+
+.label-for-file {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally */
+    height: 40px;
+    width: 100%;
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 150px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 45px;
+    font-family: 'Cursive', cursive;
+    margin-left: 8px;
+    margin-top: 15px; /* Adjust margin as needed */
+    cursor: pointer;
+}
+
+/* Style the file input label */
+.label-for-file:hover {
+    background: linear-gradient(45deg, #ffb6c1, #ff4d4d); /* Change gradient colors on hover */
+}
+
+/* Hide the default file input label text */
+#attachment + label {
+    display: none;
+}
+
+        
         
     </style>
 </head>
@@ -184,8 +223,8 @@
         <label for="social-media-handle">Social Media Handle (Identity Verification):</label>
         <input type="text" id="social-media-handle" name="social_media_handle" required>
 
-           <label for="attachment">pic/selfie of you  (5mb file size limit):</label>
-        <input type="file" name="attachment" id="attachment" accept="image/png, image/jpeg" required>
+           <label for="attachment" class="label-for-file">Pic/Selfie of you  (5mb file size limit):</label>
+        <input type="file" name="attachment" id="attachment" accept="image/png, image/jpeg" required class="file-input-button">
         
         <button type="submit" class="submit">Submit</button>
     </form>
