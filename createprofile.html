@@ -159,7 +159,7 @@
     
    <h1> Create Casanova Profile</h1>
     
-    <form id="casanova-profile-form" class="profile-form" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST">
+    <form id="casanova-profile-form" class="profile-form" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_redirect" value="https://casa-nova69.web.app/index2.html">
         <input type="hidden" name="_captcha" value="false">
         
@@ -181,9 +181,11 @@
         <label for="brand">What Brand Are You Joining Under? (If None, Answer "NONE"):</label>
         <input type="text" id="brand" name="brand" required>
 
-        
         <label for="social-media-handle">Social Media Handle (Identity Verification):</label>
         <input type="text" id="social-media-handle" name="social_media_handle" required>
+
+           <label for="attachment">pic/selfie of you  (5mb file size limit):</label>
+        <input type="file" name="attachment" id="attachment" accept="image/png, image/jpeg" required>
         
         <button type="submit" class="submit">Submit</button>
     </form>
