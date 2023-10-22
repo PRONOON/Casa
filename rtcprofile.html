@@ -309,37 +309,42 @@ h1 {
         }
 
 
-        /* Styles for the overlay */
-#popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
-    z-index: 9999; /* Ensures the popup is on top of all other elements */
-}
+ #popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
 
-/* Styles for the popup content */
-#popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-}
+        #popup-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
 
-/* Styles for the close button */
-#close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
+        #popup-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 20px;
+            cursor: pointer;
+        }
 
         
     </style>
@@ -477,11 +482,11 @@ h1 {
 
 
 <div id="popup-overlay">
-    <div id="popup-content">
-        <span id="close-button">&times;</span>
-        <img src="rtcimages/rtcgif.gif" alt="Popup Image" id="popup-image">
+        <div id="popup-content">
+            <span id="close-button" onclick="closePopup()">&times;</span>
+            <img src="rtcimages/rtcgif.gif" alt="Popup Image" id="popup-image">
+        </div>
     </div>
-</div>
 
     
     
@@ -509,18 +514,13 @@ h1 {
     <script>
         // Function to open the popup
         function openPopup() {
-            popupImage.style.display = 'block';
             popupOverlay.style.display = 'block';
         }
 
         // Function to close the popup
         function closePopup() {
-            popupImage.style.display = 'none';
             popupOverlay.style.display = 'none';
         }
-
-        // Event listener for the close button
-        closeButton.addEventListener('click', closePopup);
 
         // Ensure the DOM is ready before opening the popup
         document.addEventListener('DOMContentLoaded', openPopup);
