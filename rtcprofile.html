@@ -344,7 +344,7 @@ We deal with all kinds of hookup connections and sell dick enlargement products 
     <div class="top-container">
         
         <div class="video-container" onclick="playVideo()">
-            <video id="video" style="width: 100%; height: 100%; object-fit: cover;" controls>
+            <video id="video" style="width: 100%; height: 100%; object-fit: cover;" controls onclick="toggleFullscreen()">
             
                 <!-- Dummy Video Source (Replace with actual video file) -->
                 <source src="videos/rtcbrandvid.mp4" type="video/mp4">
@@ -461,6 +461,12 @@ We deal with all kinds of hookup connections and sell dick enlargement products 
   
   videoElement.play(); // Play the video
 }
+
+        function toggleFullscreen() {
+    const videoElement = document.getElementById('video');
+
+    if (videoElement.requestFullscreen) {
+        if (document.fullscreen
 
     </script>
 
