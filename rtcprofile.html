@@ -446,10 +446,22 @@ We deal with all kinds of hookup connections and sell dick enlargement products 
     
     <script>
         function playVideo() {
-            const videoElement = document.getElementById('video');
-            videoElement.style.display = 'block';
-            videoElement.play();
-        }
+  const videoElement = document.getElementById('video');
+  
+  // Request fullscreen
+  if (videoElement.requestFullscreen) {
+    videoElement.requestFullscreen();
+  } else if (videoElement.mozRequestFullScreen) { // Firefox
+    videoElement.mozRequestFullScreen();
+  } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+    videoElement.webkitRequestFullscreen();
+  } else if (videoElement.msRequestFullscreen) { // IE/Edge
+    videoElement.msRequestFullscreen();
+  }
+  
+  videoElement.play(); // Play the video
+}
+
     </script>
 
     <script>
