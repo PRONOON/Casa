@@ -505,30 +505,25 @@ h1 {
     
 
 
-<script>
-const popupOverlay = document.getElementById('popup-overlay');
-const popupContent = document.getElementById('popup-content');
-const popupImage = document.getElementById('popup-image');
-const closeButton = document.getElementById('close-button');
+    <script>
+        // Function to open the popup
+        function openPopup() {
+            popupImage.style.display = 'block';
+            popupOverlay.style.display = 'block';
+        }
 
-// Function to open the popup
-function openPopup() {
-    popupImage.style.display = 'block';
-    popupOverlay.style.display = 'block';
-}
+        // Function to close the popup
+        function closePopup() {
+            popupImage.style.display = 'none';
+            popupOverlay.style.display = 'none';
+        }
 
-// Function to close the popup
-function closePopup() {
-    popupImage.style.display = 'none';
-    popupOverlay.style.display = 'none';
-}
+        // Event listener for the close button
+        closeButton.addEventListener('click', closePopup);
 
-// Event listener for the close button
-closeButton.addEventListener('click', closePopup);
-
-// You can trigger the popup by calling openPopup() when needed.
-
-</script> 
+        // Ensure the DOM is ready before opening the popup
+        document.addEventListener('DOMContentLoaded', openPopup);
+    </script>
     
 </body>
 </html>
