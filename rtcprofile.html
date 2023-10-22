@@ -307,7 +307,38 @@ h1 {
         }
 
 
-        
+        /* Styles for the overlay */
+#popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+    z-index: 9999; /* Ensures the popup is on top of all other elements */
+}
+
+/* Styles for the popup content */
+#popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Styles for the close button */
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
         
     </style>
 
@@ -444,8 +475,13 @@ h1 {
     </div>
 
 
-<!-- Add this white box element -->
-<div id="whiteBox"></div>
+<div id="popup-overlay">
+    <div id="popup-content">
+        <span id="close-button">&times;</span>
+        <img src="rtcimages/rtcgif.gif" alt="Popup Image" id="popup-image">
+    </div>
+</div>
+
     
     
     <script>
@@ -491,53 +527,30 @@ videoElement.addEventListener('click', () => {
     </script>
 
 
-
-
 <script>
-  // Define an array of image URLs for the slideshow
-  const images = [
-    'rtcimages/rtcflyer.jpg',
-    'rtcimages/rtcflyer2.jpg'
-  ];
+const popupOverlay = document.getElementById('popup-overlay');
+const popupContent = document.getElementById('popup-content');
+const popupImage = document.getElementById('popup-image');
+const closeButton = document.getElementById('close-button');
 
-  const imageElement = document.createElement('img');
-  imageElement.style.position = 'fixed';
-  imageElement.style.top = '0';
-  imageElement.style.left = '0';
-  imageElement.style.width = '100%';
-  imageElement.style.height = '100%';
+// Function to open the popup
+function openPopup() {
+    popupImage.style.display = 'block';
+    popupOverlay.style.display = 'block';
+}
 
-  document.body.appendChild(imageElement);
+// Function to close the popup
+function closePopup() {
+    popupImage.style.display = 'none';
+    popupOverlay.style.display = 'none';
+}
 
-  let currentIndex = 0;
+// Event listener for the close button
+closeButton.addEventListener('click', closePopup);
 
-  // Function to change the displayed image
-  function changeImage() {
-    imageElement.src = images[currentIndex];
-    currentIndex = (currentIndex + 1) % images.length;
+// You can trigger the popup by calling openPopup() when needed.
 
-    // Display the first image for 3 seconds and the second image for 2 seconds
-    const displayTime = currentIndex === 0 ? 3000 : 2000;
-
-    if (currentIndex === 0) {
-      setTimeout(changeImage, displayTime);
-    } else {
-      // After displaying the second image, transition to the page content
-      setTimeout(showPageContent, displayTime);
-    }
-  }
-
-  // Function to hide the slideshow and display the page content
-  function showPageContent() {
-    imageElement.style.display = 'none'; // Hide the image
-    document.body.style.overflow = 'auto'; // Show scrollbars
-  }
-
-  // Start the slideshow
-  changeImage();
-</script>
-
-    
+</script> 
     
 </body>
 </html>
