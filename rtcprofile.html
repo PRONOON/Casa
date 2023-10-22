@@ -491,5 +491,37 @@ videoElement.addEventListener('click', () => {
     </script>
 
 
+<script>
+  // Define an array of image URLs for the slideshow
+  const images = [
+    'rtcflyer.jpg',
+    'rtcflyer2.jpg'
+  ];
+
+  const imageElement = document.createElement('img');
+  imageElement.src = images[0];
+  let currentIndex = 0;
+
+  // Function to change the displayed image
+  function changeImage() {
+    imageElement.src = images[currentIndex];
+    currentIndex = (currentIndex + 1) % images.length;
+
+    // Display the image for 3 seconds
+    const displayTime = currentIndex === 0 ? 3000 : 2000;
+
+    // Set a timer to change the image
+    setTimeout(changeImage, displayTime);
+  }
+
+  // Append the image element to the body
+  document.body.appendChild(imageElement);
+
+  // Start the slideshow
+  changeImage();
+</script>
+
+
+    
 </body>
 </html>
