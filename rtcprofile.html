@@ -7,6 +7,8 @@
 
 
 <script src="validation.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.3.1/screenfull.min.js"></script>
+
 
     
     <style>
@@ -464,13 +466,14 @@ We deal with all kinds of hookup connections and sell dick enlargement products 
     </script>
     
     <script>
-    function toggleFullscreen() {
-    const videoElement = document.getElementById('video');
-
-    if (videoElement.requestFullscreen) {
-        if (document.fullscreen
-
-    </script>
+    // Add an event listener to your video element
+const videoElement = document.getElementById('video');
+videoElement.addEventListener('click', () => {
+    if (screenfull.isEnabled) {
+        screenfull.toggle(videoElement);
+    }
+});
+  </script>
 
     <script>
         function copyProfileID() {
