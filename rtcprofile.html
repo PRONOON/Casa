@@ -522,6 +522,52 @@ videoElement.addEventListener('click', () => {
 </script>
 
 
+
+<script>
+  // Define an array of image URLs for the slideshow
+  const images = [
+    'rtcflyer.jpg',
+    'rtcflyer2.jpg'
+  ];
+
+  const imageElement = document.createElement('img');
+  imageElement.style.position = 'fixed';
+  imageElement.style.top = '0';
+  imageElement.style.left = '0';
+  imageElement.style.width = '100%';
+  imageElement.style.height = '100%';
+
+  document.body.appendChild(imageElement);
+
+  let currentIndex = 0;
+
+  // Function to change the displayed image
+  function changeImage() {
+    imageElement.src = images[currentIndex];
+    currentIndex = (currentIndex + 1) % images.length;
+
+    // Display the first image for 3 seconds and the second image for 2 seconds
+    const displayTime = currentIndex === 0 ? 3000 : 2000;
+
+    if (currentIndex === 0) {
+      setTimeout(changeImage, displayTime);
+    } else {
+      // After displaying the second image, transition to the page content
+      setTimeout(showPageContent, displayTime);
+    }
+  }
+
+  // Function to hide the slideshow and display the page content
+  function showPageContent() {
+    imageElement.style.display = 'none'; // Hide the image
+    document.body.style.overflow = 'auto'; // Show scrollbars
+  }
+
+  // Start the slideshow
+  changeImage();
+</script>
+
+    
     
 </body>
 </html>
