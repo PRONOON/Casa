@@ -343,10 +343,10 @@ h1 {
     grid-template-columns: repeat(2, 1fr); /* Two columns by default */
     grid-gap: 0px;
     margin: 20px 0;
-    max-width: 1600px;
+    
     white-space: nowrap;
     overflow: hidden;
-    width: 1300%;
+    width: 100%;
 }
 
 @media (min-width: 1200px) {
