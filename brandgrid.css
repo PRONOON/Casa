@@ -341,8 +341,8 @@ h1 {
         .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns by default */
-    grid-gap: 35px;
-    margin: 20px auto;
+    grid-gap: 0px;
+    margin: 20px 0;
     max-width: 1600px;
     white-space: nowrap;
     overflow: hidden;
