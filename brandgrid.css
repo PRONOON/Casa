@@ -241,7 +241,7 @@ h1 {
 }
 
 .firstbar {
-    width: 80px;
+    width: 90px;
     height: 18px;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     margin: 3px 0; /* Adjust spacing between the bars */
@@ -252,7 +252,7 @@ h1 {
         
         
 .bar {
-    width: 80px;
+    width: 90px;
     height: 18px;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     margin: 3px 0; /* Adjust spacing between the bars */
