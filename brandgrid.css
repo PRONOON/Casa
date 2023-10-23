@@ -241,24 +241,24 @@ h1 {
 }
 
 .firstbar {
-    width: 90px;
+    width: 95px;
     height: 18px;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     margin: 3px 0; /* Adjust spacing between the bars */
     transition: 0.4s;
     margin-top: 40px;
-    margin-left: 30px;
+    margin-left: 45px;
 }
         
         
 .bar {
-    width: 90px;
+    width: 95px;
     height: 18px;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     margin: 3px 0; /* Adjust spacing between the bars */
     transition: 0.4s;
     margin-top: 15px;
-    margin-left: 30px;
+    margin-left: 45px;
 }
         
 
