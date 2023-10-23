@@ -247,7 +247,7 @@ h1 {
     margin: 3px 0; /* Adjust spacing between the bars */
     transition: 0.4s;
     margin-top: 40px;
-    margin-left: 13px;
+    margin-left: 30px;
 }
         
         
@@ -258,7 +258,7 @@ h1 {
     margin: 3px 0; /* Adjust spacing between the bars */
     transition: 0.4s;
     margin-top: 15px;
-    margin-left: 13px;
+    margin-left: 30px;
 }
         
 
@@ -346,6 +346,7 @@ h1 {
     max-width: 1600px;
     white-space: nowrap;
     overflow: hidden;
+    width: 100%;
 }
 
 @media (min-width: 1200px) {
