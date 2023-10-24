@@ -161,8 +161,7 @@ margin-top: 250px;
 
 
 h1 {
-    
-    background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     text-align: center;
     color: #ffb6c1;
     font-size: 85px;
