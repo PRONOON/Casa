@@ -113,7 +113,7 @@
         .byline-container2 {
     display: flex; /* Display bylines in a row */
     overflow: hidden;
-   background: linear-gradient(to right, black, white);
+   background:linear-gradient(45deg, #9C762D, #000000);
 /*linear-gradient(45deg, #ff4d4d, #ffb6c1);*/
     padding: 0; /* Remove padding to make it as tall as its contents */
     align-items: flex-start; /* Align contents to the top */
@@ -124,7 +124,7 @@
 .byline-container3 {
     display: flex; /* Display bylines in a row */
     overflow: hidden;
-   background: linear-gradient(to right, black, white);
+   background:linear-gradient(45deg, #9C762D, #000000);
 /*linear-gradient(45deg, #ff4d4d, #ffb6c1);*/
     padding: 0; /* Remove padding to make it as tall as its contents */
     align-items: flex-start; /* Align contents to the top */
