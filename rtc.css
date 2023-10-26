@@ -118,7 +118,7 @@
     padding: 0; /* Remove padding to make it as tall as its contents */
     align-items: flex-start; /* Align contents to the top */
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .byline-container3 {
