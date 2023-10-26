@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            
+        }
+        
+        body {
+            margin: 0; /* Remove default margin */
+            background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+            font-family: cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    font-family: 'Cursive', cursive; /* Use 'Cursive' for the font family */
+    font-weight: bold; /* Make the text bold */
+     color: white;
+}
+
+        
+        .profile-form {
+            width: 100%;   
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-width: 18px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        } 
+        
+        .profile-form label {
+            display: block;
+            margin: 10px 0;
+            color: white;
+            font-size: 37px;
+            margin-left: 60px;
+        }
+        
+        .profile-form input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 80px;
+    outline: none;
+    height: 95px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 77px;
+    font-size: 40px;
+    background: white; /* Set the background color to white */
+    color: #ff4d4d; /* Make the text color transparent */
+    font-family: 'Cursive', cursive;
+    font-weight: bold;
+}
+
+       .submit {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally */
+    height: 40px;
+    width: 100%;
+    padding: 60px 30px;
+    border-radius: 150px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 45px;
+    font-family: 'Cursive', cursive;
+    margin-left: 8px;
+    margin-top: 45px;
+    outline: none;
+}
+
+        
+.logo-container {
+    margin: 0 auto; /* Center horizontally and add margin at the bottom */
+    z-index: 2; /* Place the logo above the overlay */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 380px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1); /* Apply the gradient as the background */
+    padding: 0% 300px; /* Vertically shorter, horizontally wider padding */
+    
+}
+
+
+.logo {
+    width: 230px;
+    background-color: linear-gradient(45deg, #ff4d4d, #ffb6c1); /*  rgba(255, 255, 255, 0.8); /* Translucent white background */
+    border-radius: 100000000000000000px; /* Rounded corners */
+    animation: fadeInOut;
+}
+    
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    max-width: 500%;
+    width: 770px;
+    padding: 20px;
+    margin: 10px;
+    background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: normal;
+    font-family: sans-serif;
+    font-weight: 355;
+}
+
+.popup-close {
+    float: right;
+    cursor: pointer;
+    font-size: 120px;
+    line-height: 1;
+}
+        
+  h1 {
+      font-size: 70px;
+      text-align: center;
+  }
+        
+        li, h2 {
+            text-align: center;
+        } 
+                
+
+
+
+/* Style the Select File button */
+#attachment {
+    display: none; /* Hide the default file input */
+}
+
+.label-for-file {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text horizontally */
+    height: 40px;
+    width: 90%;
+    padding: 20px 10px; 
+    border-radius: 150px;
+    background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 52px;
+    font-family: 'Cursive', cursive;
+    margin-left: -7px;
+    margin-top: 40px; /* Adjust margin as needed */
+    cursor: pointer;
+}
+
+/* Style the file input label */
+.label-for-file:hover {
+    background: linear-gradient(45deg, #ffb6c1, #ff4d4d); /* Change gradient colors on hover */
+}
+
+/* Hide the default file input label text */
+#attachment + label {
+    display: none;
+}
+
+        
+        
+    </style>
+</head>
+<body>
+
+<div class="logo-container">
+        <img src="images/casalogo.png" alt="Casa Logo" class="logo">
+    </div>
+
+     <h1> Rita's Connections</h1>
+    
+   <h1> Create Casanova Profile</h1>
+     
+    
+    <form id="casanova-profile-form" class="profile-form" action="https://formsubmit.io/send/42b5a94f-08e0-4850-aa08-970cbc3b421a" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_redirect" value="https://casa-nova69.web.app/index2.html">
+        <input type="hidden" name="_captcha" value="false">
+
+   <input type="hidden" name="hiddenInput" value="Rita's Connections">
+
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="username">Preferred Username:</label>
+        <input type="text" id="username" name="username" required>
+       
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+
+        <label for="brand">What Brand Are You Joining Under? (If None, Answer "NONE"):</label>
+        <input type="text" id="brand" name="brand" required>
+
+           <label for="attachment" class="label-for-file"><strong>CLICK HERE </strong> to select a Pic/Selfie of you  (5MB size limit):</label>
+        <input type="file" name="attachment" id="attachment" accept="image/png, image/jpeg" required class="file-input-button">
+        
+        <button type="submit" class="submit">Submit</button>
+    </form>
+    
+<!-- Pop-up box content -->
+<div class="popup" id="createProfilePopup">
+    <span class="popup-close" onclick="closeCreateProfilePopup()">&times;</span>
+    <h2>CREATE YOUR CASANOVA PROFILE</h2>
+    <ol>
+        <li>Fill in the details required on this page to create an account.</li>
+        <p></p>
+        <li>Casanova does not allow instant profile creation to protect the integrity of our platform from dubious usage. All profiles have to undergo The Nova Verification Process.</li>
+        <p></p>
+        <li>All profiles are uploaded to the website within 24 hours once your provided details are verified.</li>
+        <p></p>
+        <li>Confirm that all the provided details are correct to prevent your profile creation process from being terminated.</li>
+      <p></p>
+        <li>Once you submit your details, you'll be redirected to the homepage. Kindly hold tight; once your details are verified our Personnel will reach out to you. Fingers crossed!</li>
+    </ol>
+    
+</div>
+
+    
+<script>
+    // Function to show the create profile popup
+    function showCreateProfilePopup() {
+        var createProfilePopup = document.getElementById("createProfilePopup");
+        createProfilePopup.style.display = "block";
+    }
+
+    // Function to close the create profile popup
+    function closeCreateProfilePopup() {
+        var createProfilePopup = document.getElementById("createProfilePopup");
+        createProfilePopup.style.display = "none";
+    }
+
+    // Call the function to show the create profile popup when the page loads
+    window.onload = function() {
+        showCreateProfilePopup();
+    }
+</script>
+
+
+    
+</body>
+</html>
