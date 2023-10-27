@@ -358,7 +358,7 @@ h1 {
 
 
         .grid-item {
-            background: linear-gradient(45deg, #ff4d4d 40%, #ffb6c1 60%);
+            background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
             padding: 0px;
             text-align: center;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
