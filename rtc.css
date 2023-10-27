@@ -164,7 +164,7 @@ h1 {
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     text-align: center;
     color: #ffb6c1;
-    font-size: 85px;
+    font-size: 88px;
     font-family: 'Roboto', Arial, sans-serif;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -189,7 +189,7 @@ h1 {
 }
 
 h1 {
-    font-size: 40px;
+    
     animation: moveText 10s linear infinite; /* Adjust the animation duration as needed */
     display: inline-block; /* Make the text behave like an inline-block element */
     position: relative; /* Position relative for z-index */
@@ -333,7 +333,7 @@ h1 {
             font-size: 66px;
             font-weight: bold;
             margin-bottom: 5px;
-            font-family: 'Cursive', cursive; 
+            font-family: 'Roboto', Arial, sans-serif;
             color: white;
             
         }
@@ -431,7 +431,7 @@ h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     color: white;
-    font-size: 34px;
+    font-size: 37px;
     line-height: 1.5;
     overflow: auto;
     word-wrap: break-word;
