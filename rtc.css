@@ -1,5 +1,5 @@
   body {
-    font-family: Arial, sans-serif;
+    font-family: font-family: 'Roboto', Arial, sans-serif;
     background: linear-gradient(135deg, #e0e0e0, #ffffff);
     background-size: 100% 100%; /* Adjust the background size */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -165,7 +165,7 @@ h1 {
     text-align: center;
     color: #ffb6c1;
     font-size: 85px;
-    font-family: 'Cursive', cursive;
+    font-family: 'Roboto', Arial, sans-serif;
     padding-top: 0px;
     padding-bottom: 0px;
     font-weight: 1500;
@@ -295,7 +295,7 @@ h1 {
     margin: 20px 0; /* Add margin for spacing */
     text-align: center; /* Center the text horizontally */
     color: #ff4d4d;
-    font-family: 'Cursive', cursive; 
+    font-family: 'Roboto', Arial, sans-serif;
     margin-top: 70px;
 }
         
