@@ -319,7 +319,6 @@ h1 {
     background-color: #ff4d4d; /* Red background color */
     color: white; /* White text color */
     border: none; /* Remove border */
-    
     margin-right: 12px;
 }
 
@@ -344,7 +343,6 @@ h1 {
     grid-template-columns: repeat(2, 1fr); /* Two columns by default */
     grid-gap: 0px;
     margin: 20px 0;
-    
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
@@ -384,7 +382,7 @@ h1 {
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     padding: 0px;
 }
 
@@ -403,9 +401,8 @@ h1 {
     z-index: 2; /* Increase z-index to layer parameters over the image */
     border-radius: 25px;
   font-family: "Comic Sans MS", "Arial", sans-serif;
-  top: 110%;
+  
         
-
 }
 
         .grid-item .parameters p {
