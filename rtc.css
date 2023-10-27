@@ -363,9 +363,10 @@ h1 {
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             position: relative; /* Add position: relative; to the grid-item */
-            display: block;
+            display: inline-block;
         vertical-align: top;
         transition: transform 1s linear;
+          padding-bottom: 35px;
         }
           
         
