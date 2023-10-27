@@ -230,7 +230,7 @@ h1 {
     left: 0px;
     cursor: pointer;
     z-index: 1000;
-    width: 90px;
+    width: 108px;
     height: 130px;
     background: white; /* Set the button color to black */
     display: grid-column;
