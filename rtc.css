@@ -189,6 +189,7 @@ h1 {
 }
 
 h1 {
+    font-size: 40px;
     animation: moveText 10s linear infinite; /* Adjust the animation duration as needed */
     display: inline-block; /* Make the text behave like an inline-block element */
     position: relative; /* Position relative for z-index */
