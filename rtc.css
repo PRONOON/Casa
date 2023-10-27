@@ -366,7 +366,7 @@ h1 {
             display: inline-block;
         vertical-align: top;
         transition: transform 1s linear;
-          padding-bottom: 100px;
+          padding-bottom: 200px;
         }
           
         
@@ -392,7 +392,7 @@ h1 {
     text-align: left;
     padding: 10px; /* Adjust padding for better visibility */
     position: absolute; /* Change position to absolute */
-    bottom: 0; /* Position at the bottom of the grid-item */
+    bottom: -200px; /* Position at the bottom of the grid-item */
     left: 0; /* Position at the left of the grid-item */
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
 /* Add a semi-transparent background color */
