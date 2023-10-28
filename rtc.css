@@ -396,7 +396,7 @@ h1 {
     padding: 10px; /* Adjust padding for better visibility */
     position: absolute; /* Change position to absolute */
     bottom: 0px; /* Position at the bottom of the grid-item */
-    left: 5px; /* Position at the left of the grid-item */
+    left: 16px; /* Position at the left of the grid-item */
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
 /* Add a semi-transparent background color */
     border-bottom-left-radius: 5px; /* Add border radius to the bottom left corner */
