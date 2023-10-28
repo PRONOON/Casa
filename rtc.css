@@ -231,7 +231,7 @@ h1 {
     left: 0px;
     cursor: pointer;
     z-index: 1000;
-    width: 150px;
+    width: 160px;
     height: 130px;
     background: white; /* Set the button color to black */
     display: grid-column;
@@ -243,8 +243,8 @@ h1 {
 }
 
 .firstbar {
-    width: 105px;
-    height: 18px;
+    width: 112px;
+    height: 21px;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     margin: 3px 0; /* Adjust spacing between the bars */
     transition: 0.4s;
@@ -254,8 +254,8 @@ h1 {
         
         
 .bar {
-    width: 105px;
-    height: 18px;
+    width: 112px;
+    height: 21px;
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     margin: 3px 0; /* Adjust spacing between the bars */
     transition: 0.4s;
