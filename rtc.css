@@ -165,7 +165,7 @@ h1 {
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
     text-align: center;
     color: white;
-    font-size: 80px;
+    font-size: 75px;
     font-family: 'Roboto', Arial, sans-serif;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -308,20 +308,11 @@ h1 {
     display: flex;
     flex-direction: column; /* Display the selections in a vertical row */
     align-items: flex-start; /* Align items to the left */
+   
 }
        
 
-/* Style the search form selections */
-.search-form select {
-    width: 110%;
-    padding: 35px 10px; /* Increase vertical padding while keeping horizontal padding the same */
-    font-size: 45px;
-    border-radius: 65px;
-    background-color: #ff4d4d; /* Red background color */
-    color: white; /* White text color */
-    border: none; /* Remove border */
-    margin-right: 12px;
-}
+
 
 
 /* Add margin-bottom to create space between select elements */
@@ -396,7 +387,7 @@ h1 {
     padding: 10px; /* Adjust padding for better visibility */
     position: absolute; /* Change position to absolute */
     bottom: 0px; /* Position at the bottom of the grid-item */
-    left: 16px; /* Position at the left of the grid-item */
+    left: 4.5px; /* Position at the left of the grid-item */
     background: linear-gradient(45deg, #ff4d4d, #ffb6c1);
 /* Add a semi-transparent background color */
     border-bottom-left-radius: 5px; /* Add border radius to the bottom left corner */
@@ -404,10 +395,12 @@ h1 {
     z-index: 2; /* Increase z-index to layer parameters over the image */
     border-radius: 25px;
   font-family: "Comic Sans MS", "Arial", sans-serif;
-  width: 96%;
+  width: 97%;
   
         
 }
+
+
 
     .grid-item .parameters p {
             margin: 0;
