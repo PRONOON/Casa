@@ -13,13 +13,11 @@
   // Function to filter profiles based on the selected criteria
   function filterProfiles() {
     var location = document.getElementById("location").value;
-    var age = document.getElementById("age").value;
     var complexion = document.getElementById("complexion").value;
     var bust = document.getElementById("bust").value;
     var backside = document.getElementById("backside").value;
-    var specialServices = document.getElementById("special-services").value;
     var faceGame = document.getElementById("face-game").value;
-    var rating = document.getElementById("rating").value;
+    
 
     var profiles = document.getElementsByClassName("grid-item");
 
