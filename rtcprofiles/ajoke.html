@@ -43,17 +43,23 @@
 /* Add this CSS to your existing styles */
 
 
+/* Add this CSS to your existing styles */
+.profile-picture-container:hover .profile-picture {
+    transform: scale(1.5);
+    transition: transform 0.2s ease-in-out;
+}
+
 .profile-picture {
     border-radius: 50%;
     width: 130px;
     height: 130px;
     object-fit: cover;
-    transition: transform 0.2s ease-in-out;
+    margin-left: 0px;
+    margin-bottom: 8px;
+    object-position: top; /* Show the top of the image */
+    transition: transform 0.2s ease-in-out; /* Add transition for smooth scaling */
 }
 
-.profile-picture-container:hover .profile-picture {
-    transform: scale(1.5);
-}
 
 
 
