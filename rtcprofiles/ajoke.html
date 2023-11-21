@@ -42,10 +42,23 @@
         }
 /* Add this CSS to your existing styles */
 
+.profile-picture-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
 .profile-picture-container:hover .profile-picture {
     transform: scale(1.5);
-    transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
+
 
 
         
