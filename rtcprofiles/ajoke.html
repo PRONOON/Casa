@@ -202,6 +202,7 @@
 
 
     <!-- Add this script to your HTML file -->
+<!-- Modify the script to apply full-screen request to the image with border-radius -->
 <script>
     // Function to open a full-screen view of the profile picture
     function openFullScreenProfilePicture() {
@@ -218,8 +219,26 @@
         } else if (profilePicture.msRequestFullscreen) { // IE/Edge
             profilePicture.msRequestFullscreen();
         }
+
+        // Add an event listener to detect when entering full-screen
+        document.addEventListener('fullscreenchange', handleFullScreenChange);
+        document.addEventListener('mozfullscreenchange', handleFullScreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullScreenChange);
+        document.addEventListener('msfullscreenchange', handleFullScreenChange);
+
+        // Function to handle changes in full-screen mode
+        function handleFullScreenChange() {
+            if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+                // Set border-radius to 0% when entering full-screen
+                profilePicture.style.borderRadius = '0%';
+            } else {
+                // Restore the original border-radius when exiting full-screen
+                profilePicture.style.borderRadius = '50%';
+            }
+        }
     }
 </script>
+
 
 
 </body>
