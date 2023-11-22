@@ -836,7 +836,10 @@ h1 {
 display: inline-block;
     } 
 
-        
+.done-button {
+    width: 200px;
+}
+    
     </style>
 </head>
 <body>
@@ -1070,11 +1073,11 @@ display: inline-block;
 
         
        
-        
-        
-        
-       
    </div>
+
+<button class="done-button" onclick="handleDoneButtonClick()">DONE</button>
+
+    
 </div>
     
 
@@ -2133,6 +2136,20 @@ moveGrids();
             profilePicture.classList.remove('expanded');
         });
     </script>
+
+
+    <!-- Add this script to your HTML file -->
+<script>
+    // Function to handle the "DONE" button click
+    function handleDoneButtonClick() {
+        // Get the sidebar element
+        const sidebar = document.getElementById('sidebar');
+
+        // Toggle the 'open' class to show/hide the sidebar
+        sidebar.classList.toggle('open');
+    }
+</script>
+
     
 </body>
 </html>
